@@ -16,7 +16,7 @@ const Footer = () => {
           </button>
         )}
         <h4>
-          Made with{' '}
+          This has been{' '}
           <span
             className="emoji"
             role="img"
@@ -25,7 +25,7 @@ const Footer = () => {
           >
             ❤️
           </span>{' '}
-          by the Tech Thoughts team.
+          A JANK Production
         </h4>
       </div>
     </footer>
