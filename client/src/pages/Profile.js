@@ -6,6 +6,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
+// import { User } from '../../../server/models';
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -41,7 +42,9 @@ const Profile = () => {
         </h2>
 
         <div className="col-12 col-md-10 mb-5">
-          An Element
+          {/* return (
+            
+          ) */}
         </div>
         {!userParam && (
           <div
