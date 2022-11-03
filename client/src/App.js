@@ -49,7 +49,7 @@ function App() {
       <Router>
         <div className="text-gray-400 bg-gray-900 body-font flex-column justify-flex-start min-100-vh">
           <Header />
-          <div className="container">
+          <div className="container justify-center">
             <Routes>
               <Route 
                 path="/"
