@@ -47,10 +47,10 @@ const Signup = () => {
             {data ? (
               <p>
                 Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
+                <Link to="/me">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+              <form className="justify-center" onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
                   placeholder="Your username"
