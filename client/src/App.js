@@ -7,6 +7,10 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './index.css';
+import './App.css';
+// import { Input } from "@material-tailwind/react";
+
 
 import Home from './pages/Home';
 import Signup from './pages/Signup';
@@ -44,9 +48,9 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
+        <div className="text-gray-400 bg-gray-900 body-font flex-column justify-flex-start min-100-vh">
           <Header />
-          <div className="container">
+          <div className="container justify-center">
             <Routes>
               <Route 
                 path="/"
