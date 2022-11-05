@@ -42,7 +42,7 @@ const Signup = () => {
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card">
-          <h4 className="card-header justify-center bg-dark text-light p-2">Sign Up</h4>
+          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
           <div className="card-body">
             {data ? (
               <p>
@@ -50,7 +50,7 @@ const Signup = () => {
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form className="justify-center p-10" onSubmit={handleFormSubmit}>
+              <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
                   placeholder="Your username"
