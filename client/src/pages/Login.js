@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
-import { Input } from "@material-tailwind/react";
+// import { Input } from "@material-tailwind/react";
 
 import Auth from '../utils/auth';
 
@@ -54,7 +54,7 @@ const Login = (props) => {
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
-                <Input
+                <input
                   className="form-input"
                   placeholder="Your email"
                   name="email"
@@ -62,7 +62,7 @@ const Login = (props) => {
                   value={formState.email}
                   onChange={handleChange}
                 />
-                <Input
+                <input
                   className="form-input"
                   placeholder="******"
                   name="password"
