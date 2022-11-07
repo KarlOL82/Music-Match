@@ -8,7 +8,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
-import "./App.css";
+import "./app.css";
 // import { Input } from "@material-tailwind/react";
 
 import Home from "./pages/Home";
