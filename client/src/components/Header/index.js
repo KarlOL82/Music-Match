@@ -10,7 +10,7 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-yellow-500 p-10  text-center">
+    <header className="bg-yellow-500 p-10 text-center">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           {Auth.loggedIn() ? (
@@ -54,10 +54,10 @@ const Header = () => {
         </div>
 
         <div>
-          <Link className="text-gray-900 py-10 text-4xl font-bold" to="/">
+          <Link className="text-gray-900 py-10 text-3xl font-bold" to="/">
             <h1 className="m-0 py-10 ">Clever Music App Name</h1>
           </Link>
-          <p className="m-0 text-xl py-6 text-gray-700">
+          <p className="m-0 text-2xl font-bold py-6 text-gray-700">
             Connect With Others Through Music
           </p>
         </div>
