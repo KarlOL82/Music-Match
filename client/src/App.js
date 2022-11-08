@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './index.css';
-import './App.css';
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./index.css";
+import "./app.css";
 // import { Input } from "@material-tailwind/react";
 
 
@@ -19,22 +19,23 @@ import EditUserProfile from './pages/EditUserProfile';
 import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ConnectWith from "./pages/ConnectWith";
 import ProfileCreator from './pages/ProfileCreator';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: "/graphql",
 });
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   // return the headers to the context so httpLink can read them
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
@@ -82,7 +83,7 @@ function App() {
                 path="/profileCreator"
                 element={<ProfileCreator />}
               />
-              
+              <Route path="/ConnectWith" element={<ConnectWith />} />
             </Routes>
           </div>
           <Footer />

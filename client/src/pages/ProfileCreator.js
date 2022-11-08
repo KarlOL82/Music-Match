@@ -7,7 +7,7 @@ import React from "react";
 // CSS still need to be done but it has a basic setup for now.
 // ************************************************/
 const profileCreator = () => {
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     console.log("it works");
   };
   const handleChange = () => {
@@ -189,10 +189,10 @@ const profileCreator = () => {
               id="about"
               type="text"
               name="about-me"
-              required="true"
+              required={true}
               placeholder="Tell me about yourself"
               value={""}
-              onchange={handleChange}
+              onChange={handleChange}
             />
           </div>
           <input type="submit" />
