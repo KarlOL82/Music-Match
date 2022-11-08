@@ -52,6 +52,7 @@ function App() {
           <Header />
           <div className="container justify-center">
             <Routes>
+
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
@@ -59,6 +60,7 @@ function App() {
               <Route path="/profiles/:username" element={<Profile />} />
               <Route path="/profileCreator" element={<ProfileCreator />} />
               <Route path="/ConnectWith" element={<ConnectWith />} />
+
             </Routes>
           </div>
           <Footer />

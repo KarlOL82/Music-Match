@@ -1,24 +1,54 @@
-import React from 'react';
-
+import React from "react";
+import { QUERY_USERS } from "../utils/queries";
+// import { useParams } from 'react-router-dom';
+import { useQuery } from "@apollo/client";
+import Auth from "../utils/auth";
+import { Link } from "react-router-dom";
 
 const ConnectWith = () => {
-return (
+  const { loading, data } = useQuery(QUERY_USERS);
+
+  const users = data?.users || data?.users || {};
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  return (
     <main>
-      <div className="flex-row justify-center">
-        <div
-          className="bg-yellow-500 mx-auto justify-center opacity-70 col-12 col-md-10 mb-3 p-3"
-          style={{ border: '1px dotted #1a1a1a' }}
+      <h3>Find Your Next Connection</h3>
+
+      {Auth.loggedIn() ? (
+        <div className="my-3">
+          <div className="card-header bg-dark text-light p-2 m-0">
+            <div>
+              {users
+                ? users.map((user) => 
+                <div key={user._id}>{user.username}</div>)
+                : null}
+            </div>
+
+          </div>
+          <div className="bg-light py-4">
+            {/* <blockquote
+          className="p-4"
+          style={{
+            fontSize: '1.5rem',
+            fontStyle: 'italic',
+            border: '2px dotted #1a1a1a',
+            lineHeight: '1.5',
+          }}
         >
-          Browse
+          
+        </blockquote> */}
+          </div>
         </div>
-        <div className="col-12 col-md-8 mb-3">
-          {/* {loading ? (
-            <div>Loading...</div>
-          ) : (
-            "Something"            
-           )} */}
-        </div>
-      </div>
+      ) : (
+        <p>
+          You need to be logged in to share your thoughts. Please{" "}
+          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+        </p>
+      )}
     </main>
   );
 };
