@@ -177,6 +177,18 @@ const profileCreator = () => {
           </div>
           <input type="submit" />
         </section>
+        <section>
+          {/* This will be where cloudnairy button to upload photo will go  */}
+          <label className="uploadProfile">Upload photo</label>
+          <input
+            type="url"
+            name="url"
+            id="url"
+            onChange={handleChange}
+            // this way the user doesnt have to put a photo in
+            required={false}
+          />
+        </section>
       
       </div>
     </>
