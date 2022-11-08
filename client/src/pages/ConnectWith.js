@@ -1,6 +1,6 @@
 import React from 'react';
 import { QUERY_USERS } from '../utils/queries';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
