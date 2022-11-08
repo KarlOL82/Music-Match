@@ -1,7 +1,8 @@
-import React from 'react';
+import React from "react";
 // import { useQuery } from '@apollo/client';
-
-
+import { Link } from "react-router-dom";
+import Auth from "../utils/auth";
+import ConnectWith from "../pages/ConnectWith";
 
 // import { QUERY_THOUGHTS } from '../utils/queries';
 
@@ -12,10 +13,7 @@ const Home = () => {
   return (
     <main>
       <div className="flex-row justify-center">
-        <div
-          className="bg-yellow-500 justify-center text-center opacity-70 col-12 col-md-10 mb-3 p-3"
-          
-        >
+        <div className="bg-yellow-500 justify-center text-center opacity-70 col-12 col-md-10 mb-3 p-3">
           More words
         </div>
         <div className="col-12 col-md-8 mb-3">
@@ -26,6 +24,31 @@ const Home = () => {
            )} */}
         </div>
       </div>
+
+      <section>
+        <p className="justify-center text-3xl text-white py-6 text-center">What would you like to do?</p>
+
+      <div className="p-6">  
+        <Link
+          className="btn text-xl text-yellow-400 bg-yellow-800 rounded-lg text-gray-700 font-bold btn-lg btn-light m-6"
+          to="/me"
+        >
+          {Auth.getProfile().data.username}'s Profile
+        </Link>
+      </div>
+
+      <div className="p-6">
+        <Link
+          className="btn text-xl text-yellow-400 bg-yellow-800 rounded-lg text-gray-700 font-bold btn-lg btn-light m-6"
+          to="/ConnectWith"
+        >
+          {ConnectWith}Find Connections
+        </Link>
+      </div>
+
+
+
+      </section>
     </main>
   );
 };
