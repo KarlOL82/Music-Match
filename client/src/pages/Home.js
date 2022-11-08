@@ -13,8 +13,8 @@ const Home = () => {
     <main>
       <div className="flex-row justify-center">
         <div
-          className="bg-yellow-500 justify-center opacity-70 col-12 col-md-10 mb-3 p-3"
-          style={{ border: '1px dotted #1a1a1a' }}
+          className="bg-yellow-500 justify-center text-center opacity-70 col-12 col-md-10 mb-3 p-3"
+          
         >
           More words
         </div>
