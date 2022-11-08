@@ -26,10 +26,8 @@ const ConnectWith = () => {
                 ? users.map((user) => 
                 <div key={user._id}>{user.username}</div>)
                 : null}
-              {/* <span style={{ fontSize: '1rem' }}>
-          other people {"people"}
-        </span> */}
             </div>
+
           </div>
           <div className="bg-light py-4">
             {/* <blockquote
