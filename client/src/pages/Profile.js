@@ -50,13 +50,6 @@ const Profile = () => {
             className="col-12 col-md-10 mb-3 p-3"
             style={{ border: '1px dotted #1a1a1a' }}
           >
-             <Link
-                className="btn text-xl text-white float-right font-bold btn-lg btn-light m-2"
-                to="/editUserProfile"
-              >
-                Link to EditUserProfile(testpage will be deleted )
-
-              </Link>
               <Link
                 className="btn text-xl text-white float-right font-bold btn-lg btn-light m-2"
                 to="/profileCreator"
