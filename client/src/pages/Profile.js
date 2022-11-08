@@ -55,6 +55,13 @@ const Profile = () => {
                 to="/editUserProfile"
               >
                 test
+
+              </Link>
+              <Link
+                className="btn text-xl text-gray-700 float-right font-bold btn-lg btn-light m-2"
+                to="/profileCreator"
+              >
+                modal
                 
               </Link>
           </div>

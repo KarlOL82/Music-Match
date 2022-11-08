@@ -37,9 +37,21 @@ const EditUserProfile = () => {
     <main>
       <section className="flex-row justify-center">
         <form onSubmit={handleSubmit}>
-          <div className="field">
+          <div className="field col-12 col-md-10 mb-3 p-3">
             <label htmlFor=''>What name do you go by? </label> <br/>
             <input type='text' value={name}    onChange={(e)=>setName(e.target.value)}   />
+            </div>
+            <div className="field col-12 col-md-10 mb-3 p-3">
+            <label htmlFor=''>Tell us about your self </label> <br/>
+            <input type='text' value={bio}    onChange={(e)=>setBio(e.target.value)}   />
+            </div>
+            <div className="field col-12 col-md-10 mb-3 p-3">
+            <label htmlFor=''>What is your perferred genre? </label> <br/>
+            <input type='text' value={genre}    onChange={(e)=>setGenre(e.target.value)}   />
+            </div>
+            <div className="submitBtn">
+                <button type='submit'>Submit</button>
+
             </div>
       </form>
       </section>

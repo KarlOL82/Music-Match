@@ -19,6 +19,7 @@ import EditUserProfile from './pages/EditUserProfile';
 import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ProfileCreator from './pages/ProfileCreator';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -75,6 +76,11 @@ function App() {
                <Route 
                 path="/editUserProfile"
                 element={<EditUserProfile />}
+              />
+              
+               <Route 
+                path="/profileCreator"
+                element={<ProfileCreator />}
               />
               
             </Routes>
