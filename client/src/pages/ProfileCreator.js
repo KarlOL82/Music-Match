@@ -1,6 +1,11 @@
 // import React, { useState } from "react";
 import React from "react";
 
+//******************* NOTES **********************/
+// Currently working on adding this info to local storage
+// Need to update models to have genres, aboutMe, Name, Birthday(if we want), and each role(Musician, Artist, Producer)
+// CSS still need to be done but it has a basic setup for now.
+// ************************************************/
 const profileCreator = () => {
   const handleSubmit = () => {
     console.log("it works");
@@ -12,9 +17,24 @@ const profileCreator = () => {
   return (
     <>
       <div className="flex-row justify-center">
-        <h2>Edit Profile</h2>
+        <h1>Edit Profile</h1>
 
         <form onSubmit={handleSubmit}></form>
+        <section>
+          {/* This will be where cloudnairy button to upload photo will go  */}
+          <div className="flex justify-end">
+          <label className="uploadProfile">Upload photo</label>
+          <input
+            type="url"
+            name="url"
+            id="url"
+            onChange={handleChange}
+            // this way the user doesnt have to put a photo in
+            required={false}
+          />
+          </div>
+        </section>
+
         <section>
           {/* This div is for Tailwind edits */}
           <div className="field col-12 col-md-10 mb-3 p-3">
@@ -177,18 +197,7 @@ const profileCreator = () => {
           </div>
           <input type="submit" />
         </section>
-        <section>
-          {/* This will be where cloudnairy button to upload photo will go  */}
-          <label className="uploadProfile">Upload photo</label>
-          <input
-            type="url"
-            name="url"
-            id="url"
-            onChange={handleChange}
-            // this way the user doesnt have to put a photo in
-            required={false}
-          />
-        </section>
+       
       
       </div>
     </>

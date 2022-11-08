@@ -51,17 +51,17 @@ const Profile = () => {
             style={{ border: '1px dotted #1a1a1a' }}
           >
              <Link
-                className="btn text-xl text-gray-700 float-right font-bold btn-lg btn-light m-2"
+                className="btn text-xl text-white float-right font-bold btn-lg btn-light m-2"
                 to="/editUserProfile"
               >
-                test
+                Link to EditUserProfile(testpage will be deleted )
 
               </Link>
               <Link
-                className="btn text-xl text-gray-700 float-right font-bold btn-lg btn-light m-2"
+                className="btn text-xl text-white float-right font-bold btn-lg btn-light m-2"
                 to="/profileCreator"
               >
-                modal
+                Link to ProfileCreator(Still need localStoragese up)
                 
               </Link>
           </div>
