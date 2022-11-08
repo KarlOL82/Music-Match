@@ -12,6 +12,15 @@ code {
     monospace;
 }
 
+
+/* profileCreator page */
+.main form{
+  display: flex;
+  justify-content: center
+}
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
