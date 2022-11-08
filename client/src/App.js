@@ -83,7 +83,10 @@ function App() {
                 path="/profileCreator"
                 element={<ProfileCreator />}
               />
-              <Route path="/ConnectWith" element={<ConnectWith />} />
+              
+              <Route 
+              path="/ConnectWith" 
+              element={<ConnectWith />} />
             </Routes>
           </div>
           <Footer />
