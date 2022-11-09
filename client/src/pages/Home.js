@@ -3,12 +3,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
 import ConnectWith from "../pages/ConnectWith";
+import { useQuery } from "@apollo/client";
+import { QUERY_USERS } from "../utils/queries";
 
 // import { QUERY_THOUGHTS } from '../utils/queries';
 
 const Home = () => {
-  // const { loading, data } = useQuery(QUERY_THOUGHTS);
+  const { loading } = useQuery(QUERY_USERS);
   // const thoughts = data?.thoughts || [];
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <main>
@@ -17,9 +23,8 @@ const Home = () => {
           More words
         </div>
         <div className="col-12 col-md-8 mb-3">
-          {/* {loading ? (
-            <div>Loading...</div>
-          ) : (
+        
+          {/* ) : (
             "Something"            
            )} */}
         </div>
