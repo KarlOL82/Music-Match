@@ -6,7 +6,13 @@ import React, { useState } from "react";
 // Need to update models to have genres, aboutMe, Name, Birthday(if we want), and each role(Musician, Artist, Producer)
 // CSS still need to be done but it has a basic setup for now.
 // ************************************************/
+
+
+
 const ProfileCreator = () => {
+
+  // const [formData, updateFormData] = React.useState(initialFormData);
+  
 
     const [userData, setUserData] = useState({
         _id: "",
@@ -24,6 +30,8 @@ const ProfileCreator = () => {
 
   const handleSubmit = (e) => {
     console.log("it works");
+    console.log(userData);
+    e.preventDefault()
   };
   const handleChange = (e) => {
     console.log("it worked too");
@@ -205,7 +213,7 @@ const ProfileCreator = () => {
                 onChange={handleChange}
               />
             </div>
-            <input type="submit" />
+            <input type="text" />
           </section>
           <section>
             {/* This will be where cloudnairy button to upload photo will go  */}
@@ -221,6 +229,7 @@ const ProfileCreator = () => {
               />
            
           </section>
+          <button onClick={handleSubmit}>Submit</button>
         </form>
       </div>
     </>

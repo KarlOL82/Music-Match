@@ -11,6 +11,22 @@ export const QUERY_USER = gql`
   }
 `;
 
+export const QUERY_USERDATA = gql`
+  query userData {
+    userData {
+      _id
+      name
+      display_role
+      role
+      role_interest
+      url
+      about_me
+      matches
+    }
+  }
+
+`
+
 export const QUERY_USERS = gql`
   query User {
     users {
