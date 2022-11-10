@@ -1,10 +1,11 @@
 import React from "react";
 // import { useQuery } from '@apollo/client';
 import { Link } from "react-router-dom";
-import Auth from "../utils/auth";
+// import Auth from "../utils/auth";
 import ConnectWith from "../pages/ConnectWith";
 import { useQuery } from "@apollo/client";
 import { QUERY_USERS } from "../utils/queries";
+import Profile from "./Profile";
 
 // import { QUERY_THOUGHTS } from '../utils/queries';
 
@@ -24,12 +25,10 @@ const Home = () => {
         </div>
         <div className="col-12 col-md-8 mb-3">
         
-          {/* ) : (
-            "Something"            
-           )} */}
+          
         </div>
       </div>
-
+      
       <section>
         <p className="justify-center text-3xl text-white py-6 text-center">What would you like to do?</p>
 
@@ -38,7 +37,7 @@ const Home = () => {
           className="btn text-xl text-yellow-500 bg-yellow-800 rounded-lg font-bold btn-lg btn-light p-3 m-6"
           to="/me"
         >
-          {Auth.getProfile().data.username}'s Profile
+          {Profile}Go to Profile
         </Link>
       </div>
 
@@ -50,7 +49,7 @@ const Home = () => {
           {ConnectWith}Find Connections
         </Link>
       </div>
-
+      
 
 
       </section>
