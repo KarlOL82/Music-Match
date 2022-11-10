@@ -60,7 +60,7 @@ const Profile = () => {
           </div>
         )}
       </div>
-      <button onClick={UploadWidget}>Upload Sound</button>
+      <UploadWidget/>
     </div>
   );
 };
