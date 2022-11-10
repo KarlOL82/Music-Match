@@ -47,9 +47,10 @@ const resolvers = {
       return { token, user };
     },
 
-    updateProfile: async (parent, args) => {
+    updateProfile: async (parent, args, context) => {
       const profile = await User.findOneAndUpdate(
-        { $addToSet: { savedBooks: args.bookData } },
+        {_id: context.user._id},
+        args.userData, 
         { new: true, runValidators: true }
         );
     }
