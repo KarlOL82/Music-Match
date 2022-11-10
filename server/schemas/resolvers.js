@@ -12,7 +12,7 @@ const resolvers = {
     },
 
     userData: async (parent, args, context) => {
-      return UserData.find()
+      return User.find().populate("matches")
     }, 
     
     me: async (parent, args, context) => {
@@ -46,6 +46,13 @@ const resolvers = {
 
       return { token, user };
     },
+
+    updateProfile: async (parent, args) => {
+      const profile = await User.findOneAndUpdate(
+        { $addToSet: { savedBooks: args.bookData } },
+        { new: true, runValidators: true }
+        );
+    }
     
     
   },

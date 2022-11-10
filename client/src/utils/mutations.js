@@ -24,3 +24,38 @@ export const ADD_USER = gql`
   }
 `;
 
+export const UPDATE_PROFILE = gql`
+mutation updateProfile($userData: User) {
+  updateProfile(userData: $userData) {
+    _id
+    username
+    email
+    name
+    role
+    url
+    about_me
+    matches
+
+  }
+}
+`
+
+
+// export const SAVE_BOOK = gql`
+//   mutation saveBook($bookToSave: bookParams!) {
+//     saveBook(bookData: $bookToSave) {
+//       _id
+//       username
+//       email
+//       bookCount
+//       savedBooks {
+//         authors
+//         description
+//         bookId
+//         image
+//         link
+//         title
+//       }
+//     }
+//   }
+// `;

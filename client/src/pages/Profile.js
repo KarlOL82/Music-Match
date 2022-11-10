@@ -58,7 +58,7 @@ const Profile = () => {
         <div className="col-12 col-md-10 mb-5">
           {userData
             ? userData.map((userData) => (
-                <div key={userData._id}>{userData.name}</div>
+                <div key={userData._id}>{user.name}</div>
               ))
             : null}
           <span className="text-gray-200 text-sm">{userData.role}</span>

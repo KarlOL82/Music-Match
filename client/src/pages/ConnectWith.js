@@ -23,7 +23,7 @@ const ConnectWith = () => {
           <div className="card-header bg-dark text-light p-2 m-0">
             <div>
               {users
-                ? users.map((user) => 
+                ? users.map((users) => 
                 <div key={user._id}>{user.username}</div>)
                 : null}
             </div>

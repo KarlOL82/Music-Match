@@ -6,19 +6,18 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    
-  }
-
-  type UserData {
-    _id: ID!
-    name: String!
-    display_role: Boolean
+    name: String
     role: String
-    role_interest: String
     url: String
     about_me: String
     matches: [User]
+    
   }
+
+  # type UserData {
+  #   _id: ID!
+    
+  # }
 
 
   type Auth {
@@ -30,12 +29,13 @@ const typeDefs = gql`
     users: [User]
     user(username: String!): User
     me: User
-    userData: UserData
+    userData: [User]
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    updateProfile(userData: User) User
     
   }
 `;
