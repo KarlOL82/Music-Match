@@ -10,6 +10,10 @@ const resolvers = {
     user: async (parent, { username }) => {
       return User.findOne({ username });
     },
+
+    userData: async (parent, args, context) => {
+      return UserData.find()
+    }, 
     
     me: async (parent, args, context) => {
       if (context.user) {

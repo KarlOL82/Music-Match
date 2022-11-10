@@ -6,17 +6,23 @@ import React, { useState } from "react";
 // Need to update models to have genres, aboutMe, Name, Birthday(if we want), and each role(Musician, Artist, Producer)
 // CSS still need to be done but it has a basic setup for now.
 // ************************************************/
+
+
+
 const ProfileCreator = () => {
+
+  // const [formData, updateFormData] = React.useState(initialFormData);
+  
 
     const [userData, setUserData] = useState({
         _id: "",
         name: "",
-        dob_day:"",
-        dob_month:"",
-        dob_year:"",
+        // dob_day:"",
+        // dob_month:"",
+        // dob_year:"",
         display_role: false,
-        role: "artist",
-        role_interest:"producer",
+        role: "",
+        role_interest:"",
         url:"",
         about_me:"",
         matches: []
@@ -24,18 +30,21 @@ const ProfileCreator = () => {
 
   const handleSubmit = (e) => {
     console.log("it works");
+    console.log(userData);
+    e.preventDefault()
   };
   const handleChange = (e) => {
     console.log("it worked too");
-    const value = e.target.value
+    const value = e.target.type === "checkedbox" ? e.target.checked : e.target.value
     const name = e.target.name
-    console.log("value " + value, "name " + name);
+    console.log("value " + value);
     
 
     setUserData((prevState) => ({
         ...prevState,
         [name] : value
     }))
+    console.log(userData);
   };
 
   return (
@@ -59,7 +68,7 @@ const ProfileCreator = () => {
               />
             </div>
             {/* this container will collect all of the birthday digits */}
-            <label>Birthday </label>
+            {/* <label>Birthday </label>
             <div className="birthday-container">
               <div className="field col-12 col-md-10 mb-3 p-3">
                 <input
@@ -94,7 +103,7 @@ const ProfileCreator = () => {
                   onChange={handleChange}
                 />
               </div>
-            </div>
+            </div> */}
 
             {/* this will allow the user to select if they are a artist, musician, or producer */}
             <label>Roles</label>
@@ -109,7 +118,7 @@ const ProfileCreator = () => {
                   value={"artist"}
                   onChange={handleChange}
                   // this will leave the box un-selected
-                  checked={false}
+                  checked={userData.role === "artist"}
                 />
                 <label className="artist"> Artist </label>
               </div>
@@ -122,7 +131,7 @@ const ProfileCreator = () => {
                   value={"musician"}
                   onChange={handleChange}
                   // this will leave the box un-selected
-                  checked={false}
+                  checked={userData.role === "musician"}
                 />
                 <label className="musician"> Musician </label>
               </div>
@@ -135,7 +144,7 @@ const ProfileCreator = () => {
                   value={"producer"}
                   onChange={handleChange}
                   // this will leave the box un-selected
-                  checked={false}
+                  checked={userData.role === "producer"}
                 />
                 <label className="producer"> Producer </label>
               </div>
@@ -149,7 +158,7 @@ const ProfileCreator = () => {
                 name="display_role"
                 onChange={handleChange}
                 // this will leave the box un-selected
-                checked={false}
+                checked={userData.display_role}
               />
             </div>
             {/* This will be for picking what intrest they have */}
@@ -164,7 +173,7 @@ const ProfileCreator = () => {
                   value={"artist"}
                   onChange={handleChange}
                   // this will leave the box un-selected
-                  checked={false}
+                  checked={userData.role_interest === "artist"}
                 />
                 <label className="artist"> Artist </label>
                 <input
@@ -175,7 +184,7 @@ const ProfileCreator = () => {
                   value={"musician"}
                   onChange={handleChange}
                   // this will leave the box un-selected
-                  checked={false}
+                  checked={userData.role_interest === "musician"}
                 />
                 <label className="musician"> Musician </label>
 
@@ -187,7 +196,7 @@ const ProfileCreator = () => {
                   value={"producer"}
                   onChange={handleChange}
                   // this will leave the box un-selected
-                  checked={false}
+                  checked={userData.role_interest === "producer"}
                 />
                 <label className="producer"> Producer</label>
               </div>
@@ -200,11 +209,11 @@ const ProfileCreator = () => {
                 name="about_me"
                 required={true}
                 placeholder="Tell me about yourself"
-                value={""}
+                value={userData.about_me}
                 onChange={handleChange}
               />
             </div>
-            <input type="submit" />
+            <input type="text" />
           </section>
           <section>
             {/* This will be where cloudnairy button to upload photo will go  */}
@@ -220,6 +229,7 @@ const ProfileCreator = () => {
               />
            
           </section>
+          <button onClick={handleSubmit}>Submit</button>
         </form>
       </div>
     </>

@@ -29,8 +29,10 @@ const Header = () => {
                 {ConnectWith}Find Connections
               </Link>
               <button
+                
                 className="btn text-xl text-gray-700 float-right font-bold btn-lg btn-light m-2"
                 onClick={logout}
+                type="button"
               >
                 Logout
               </button>
