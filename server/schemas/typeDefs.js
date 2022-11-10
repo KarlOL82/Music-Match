@@ -13,11 +13,11 @@ const typeDefs = gql`
     _id: ID!
     name: String!
     display_role: Boolean
-    role: Stringr
+    role: String
     role_interest: String
-    url: url
+    url: String
     about_me: String
-    matches: [users]
+    matches: [User]
   }
 
 
