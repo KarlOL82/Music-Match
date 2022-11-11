@@ -10,7 +10,7 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-yellow-500 p-10 text-center">
+    <header className="bg-yellow-500  text-center">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           {Auth.loggedIn() ? (

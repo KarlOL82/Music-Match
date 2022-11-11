@@ -18,7 +18,10 @@ const Home = () => {
   }
 
   return (
-    <main>
+    <main className="">
+      <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
       <div className="flex-row justify-center">
         <div className="bg-yellow-500 justify-center text-center opacity-70 col-12 col-md-10 mb-3 p-3">
           More words
