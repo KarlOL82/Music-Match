@@ -19,7 +19,7 @@ export const QUERY_USERDATA = gql`
       role
       url
       about_me
-      matches
+      
     }
   }
 
@@ -35,7 +35,7 @@ export const QUERY_USERS = gql`
       role
       url
       about_me
-      matches
+      
     }
   }
 `;
@@ -50,7 +50,7 @@ export const QUERY_ME = gql`
       role
       url
       about_me
-      matches
+      
     }
   }
 `;

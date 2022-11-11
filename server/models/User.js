@@ -34,12 +34,12 @@ const userSchema = new Schema({
   about_me: {
     type: String
   },
-  matches: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'User',
-    }
-  ]
+  // matches: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: 'User',
+  //   }
+  // ]
 
   
 });

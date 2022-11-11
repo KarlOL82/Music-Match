@@ -24,7 +24,7 @@ const ConnectWith = () => {
             <div>
               {users
                 ? users.map((users) => 
-                <div key={user._id}>{user.username}</div>)
+                <div key={users._id}>{users.username}</div>)
                 : null}
             </div>
 

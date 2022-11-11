@@ -10,7 +10,7 @@ const typeDefs = gql`
     role: String
     url: String
     about_me: String
-    matches: [User]
+    
     
   }
 

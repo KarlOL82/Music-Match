@@ -25,7 +25,7 @@ export const ADD_USER = gql`
 `;
 
 export const UPDATE_PROFILE = gql`
-mutation updateProfile($userData: User) {
+mutation updateProfile($userData: ProfileData) {
   updateProfile(userData: $userData) {
     _id
     username
@@ -34,7 +34,7 @@ mutation updateProfile($userData: User) {
     role
     url
     about_me
-    matches
+    
 
   }
 }

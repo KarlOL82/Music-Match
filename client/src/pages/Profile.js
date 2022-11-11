@@ -3,7 +3,7 @@ import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
-import ProfileCreator from "./ProfileCreator";
+// import ProfileCreator from "./ProfileCreator";
 
 import Auth from "../utils/auth";
 // import { User } from '../../../server/models';
@@ -24,11 +24,11 @@ const Profile = () => {
     // dob_month:"",
     // dob_year:"",
     display_role: false,
-    role: "",
+    role: [""],
     role_interest: "",
     url: "",
     about_me: "",
-    matches: [],
+    
   });
 
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
@@ -39,14 +39,14 @@ const Profile = () => {
     return <div>Loading...</div>;
   }
 
-  if (!user?.username) {
-    return (
-      <h4>
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
-      </h4>
-    );
-  }
+  // if (!user?.username) {
+  //   return (
+  //     <h4>
+  //       You need to be logged in to see this. Use the navigation links above to
+  //       sign up or log in!
+  //     </h4>
+  //   );
+  // }
 
   return (
     <div>
@@ -58,20 +58,23 @@ const Profile = () => {
         <div className="col-12 col-md-10 mb-5">
           {userData
             ? userData.map((userData) => (
-                <div key={userData._id}>{user.name}</div>
+               <> <div key={userData._id}>{userData.name}</div>
+               <div>{userData.about_me}</div>
+               </>
+                
+                
               ))
             : null}
-          <span className="text-gray-200 text-sm">{userData.role}</span>
-          <span className="text-gray-200 text-sm">{userData.role_interest}</span>
+          
                                 
                               
         </div>
-        <div className="col-12 col-md-10 mb-5">{ProfileCreator.role}</div>
+        <div className="col-12 col-md-10 mb-5"></div>
         <div className="col-12 col-md-10 mb-5">
-          {ProfileCreator.display_role}
+          
         </div>
         <div className="col-12 col-md-10 mb-5">
-          {ProfileCreator.role_interest}
+          
         </div>
         {!userParam && (
           <div

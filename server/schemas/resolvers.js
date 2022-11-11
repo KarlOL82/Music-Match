@@ -48,7 +48,7 @@ const resolvers = {
     },
 
     updateProfile: async (parent, args, context) => {
-      const profile = await User.findOneAndUpdate(
+      return await User.findOneAndUpdate(
         {_id: context.user._id},
         args.userData, 
         { new: true, runValidators: true }

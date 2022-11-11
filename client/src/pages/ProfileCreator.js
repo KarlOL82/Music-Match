@@ -1,4 +1,6 @@
+import { useMutation } from "@apollo/client";
 import React, { useState } from "react";
+import { UPDATE_PROFILE } from "../utils/mutations";
 // import React from "react";
 
 //******************* NOTES **********************/
@@ -7,53 +9,50 @@ import React, { useState } from "react";
 // CSS still need to be done but it has a basic setup for now.
 // ************************************************/
 
-
-
 const ProfileCreator = () => {
-
   // const [formData, updateFormData] = React.useState(initialFormData);
-  
 
-    const [userData, setUserData] = useState({
-        _id: "",
-        name: "",
-        // dob_day:"",
-        // dob_month:"",
-        // dob_year:"",
-        display_role: false,
-        role: "",
-        role_interest:"",
-        url:"",
-        about_me:"",
-        matches: []
-    })
+  const [updateProfile] = useMutation(UPDATE_PROFILE)
+  const [userData, setUserData] = useState({
+    name: "",
+    role: "",
+    
+    url: "",
+    about_me: "",
+  });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+
     console.log("it works");
     console.log(userData);
-    e.preventDefault()
+    e.preventDefault();
+    await updateProfile({
+      variables: {userData}
+    });
+
+
   };
   const handleChange = (e) => {
     console.log("it worked too");
-    const value = e.target.type === "checkedbox" ? e.target.checked : e.target.value
-    const name = e.target.name
+    const value =
+      e.target.type === "checkedbox" ? e.target.checked : e.target.value;
+    const name = e.target.name;
     console.log("value " + value);
-    
 
     setUserData((prevState) => ({
-        ...prevState,
-        [name] : value
-    }))
+      ...prevState,
+      [name]: value,
+    }));
     console.log(userData);
   };
 
   return (
     <>
-        <h1 className="flex justify-center">Edit Profile</h1>
+      <h1 className="flex justify-center">Edit Profile</h1>
 
       <div className="flex justify-center">
         <form onSubmit={handleSubmit}>
-          <section >
+          <section>
             {/* This div is for Tailwind edits */}
             <div className="field col-12 col-md-10 mb-3 p-3">
               <label className="name">What do you go by? </label>
@@ -150,7 +149,7 @@ const ProfileCreator = () => {
               </div>
             </div>
             {/* this is a checkbox to display role tag */}
-            <div className="field col-12 col-md-10 mb-3 p-3">
+            {/* <div className="field col-12 col-md-10 mb-3 p-3">
               <label className="display-role ">Display Role Tag</label>
               <input
                 id="display_role"
@@ -160,11 +159,11 @@ const ProfileCreator = () => {
                 // this will leave the box un-selected
                 checked={userData.display_role}
               />
-            </div>
+            </div> */}
             {/* This will be for picking what intrest they have */}
-            <label>What Do You Want To See?</label>
+            {/* <label>What Do You Want To See?</label> */}
             <div className="field col-12 col-md-10 mb-3 p-3">
-              <div className="role-interest-container">
+              {/* <div className="role-interest-container">
                 <input
                   id="artist_interest"
                   type="radio"
@@ -199,7 +198,7 @@ const ProfileCreator = () => {
                   checked={userData.role_interest === "producer"}
                 />
                 <label className="producer"> Producer</label>
-              </div>
+              </div> */}
 
               {/* label for about me  */}
               <label className="about-me">About me </label>
@@ -215,20 +214,19 @@ const ProfileCreator = () => {
             </div>
             <input type="text" />
           </section>
-          <section>
-            {/* This will be where cloudnairy button to upload photo will go  */}
-            
-              <label className="uploadProfile">Upload photo</label>
-              <input
-                type="url"
-                name="url"
-                id="url"
-                onChange={handleChange}
-                // this way the user doesnt have to put a photo in
-                required={false}
-              />
+          {/* <section>
            
-          </section>
+
+            <label className="uploadProfile">Upload photo</label>
+            <input
+              type="url"
+              name="url"
+              id="url"
+              onChange={handleChange}
+              // this way the user doesnt have to put a photo in
+              required={false}
+            />
+          </section> */}
           <button onClick={handleSubmit}>Submit</button>
         </form>
       </div>
