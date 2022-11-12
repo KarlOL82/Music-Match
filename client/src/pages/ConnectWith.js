@@ -39,7 +39,7 @@ const ConnectWith = () => {
                       </p>
                     </h2>
                     <div>
-                <figure>
+                <figure className="justify-center">
                   <figcaption>My Music</figcaption>
                   <audio controls src={users.url}>
                    <p>greatness</p>
