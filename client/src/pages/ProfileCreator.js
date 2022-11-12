@@ -158,7 +158,7 @@ const ProfileCreator = () => {
             </div>
             {/* this is a checkbox to display role tag */}
 
-            <div className="">
+            {/* <div className="">
               <label className="display-role col-12 col-md-10 mb-3 p-3 ">Display Role Tag</label>
 
               <input
@@ -170,7 +170,7 @@ const ProfileCreator = () => {
                 checked={userData.display_role}
               />
 
-            </div>
+            </div> */}
             </div>
 
             {/* This will be for picking what intrest they have */}

@@ -7,6 +7,7 @@ import { useQuery } from "@apollo/client";
 import { QUERY_USERS } from "../utils/queries";
 import Profile from "./Profile";
 
+
 // import { QUERY_THOUGHTS } from '../utils/queries';
 
 const Home = () => {
@@ -18,15 +19,13 @@ const Home = () => {
   }
 
   return (
-    <main className="">
+   
+    <main className="background">
+       <div className="container ">
       <div class="bg"></div>
       <div class="bg bg2"></div>
       <div class="bg bg3"></div>
       <div className="flex-row justify-center">
-        {/* <div className="bg-yellow-500 justify-center text-center opacity-70 col-12 col-md-10 mb-3 p-3">
-          More words
-        </div> */}
-        <div className="col-12 col-md-8 mb-3"></div>
       </div>
 
       <section>
@@ -52,6 +51,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
+      </div>
     </main>
   );
 };
