@@ -53,6 +53,7 @@ const Profile = () => {
       <div className="bg bg2"></div>
       <div className="bg bg3"></div>
       <div className="flex-row justify-center mb-3">
+
         <h2 className="text-xl float-left md:float-right">
           Viewing {userParam ? `${user.username}'s` : "your"} profile.
         </h2>
@@ -85,28 +86,29 @@ const Profile = () => {
             </div>
           </div>
           {/* ))
+
              : null}   */}
         </div>
-        <div className="col-12 col-md-10 mb-5"></div>
-        <div className="col-12 col-md-10 mb-5"></div>
-        <div className="col-12 col-md-10 mb-5"></div>
+        </div>
         {!userParam && (
-          <div
-            className="col-12 col-md-10 mb-3 p-3"
-            style={{ border: "1px dotted #1a1a1a" }}
-          >
+          <div className="">
             <Link
-              className="btn text-xl bg-slate-300 rounded-lg text-gray-900  float-center font-bold btn-lg btn-info m-2 hover:bg-slate-600"
+              className="btn text-xl bg-slate-300 rounded-lg text-gray-900  float-right font-bold btn-lg btn-info m-2 hover:bg-slate-600"
               to="/profileCreator"
+
             >
-              Update Profiles
+
+
+              Update Profile
+
             </Link>
-          </div>
+        </div>
         )}
       </div>
       {/* <div className='btn text-xl bg-slate-300 rounded-lg text-gray-900  float-right font-bold btn-lg btn-info m-2 hover:bg-slate-600'>
         <UploadWidget/>
       </div> */}
+
     </div>
   );
 };
