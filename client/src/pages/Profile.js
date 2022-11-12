@@ -3,12 +3,9 @@ import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
-// import ProfileCreator from "./ProfileCreator";
-// import { UPDATE_PROFILE } from "../utils/mutations";
-// import { useMutation } from "@apollo/client";
 
 import Auth from "../utils/auth";
-// import { User } from '../../../server/models';
+
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -19,35 +16,12 @@ const Profile = () => {
 
   const user = data?.me || data?.user || {};
   console.log(data);
-  // const ShowProfile = async (e) => {
-  //   useEffect(() => {
-  //     ShowProfile();
-  //   }, []);
-
-  //   console.log("it works");
-  //   console.log(userData);
-  //   e.preventDefault();
-  //   await updateProfile({
-  //     variables: { userData },
-  //   });
-
-  //   setUserData((prevState) => ({
-  //     ...prevState,
-  //     [name]: value,
-  //   }));
-  //   console.log(userData);  
-    
-  // };
-
   
 
-  // const [updateProfile] = useMutation(UPDATE_PROFILE);
+  
   const userData = useState({
     _id: "",
     name: "",
-    // dob_day:"",
-    // dob_month:"",
-    // dob_year:"",
     display_role: false,
     role: [""],
     role_interest: "",
@@ -56,7 +30,7 @@ const Profile = () => {
   });
 
     
-  // console.log(userData.name);
+  console.log(userData);
 
   if (Auth.loggedIn() && Auth.getProfile().data._id === userParam) {
     console.log("logged in");
@@ -82,11 +56,12 @@ const Profile = () => {
         <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
           Viewing {userParam ? `${user.username}'s` : "your"} profile.
         </h2>
-        console.log(userData);
+        
         <div className="col-12 col-md-10 mb-5">
           {userData
             ? userData.map((userData) => (
-                <div key={userData.username} className="col-12 mb-3 pb-3">
+              
+                <div key={userData._id} className="col-12 mb-3 pb-3">
                   <div className="p-3 bg-dark text-light">
                     <h5 className="card-header">
                       {userData.name}
