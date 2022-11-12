@@ -90,6 +90,7 @@ const Profile = () => {
              : null}   */}
         </div>
         </div>
+        <>
         {!userParam && (
           <div className="">
             <Link
@@ -102,13 +103,9 @@ const Profile = () => {
             </Link>
         </div>
         )}
-      </div>
-      {/* <div className='btn text-xl bg-slate-300 rounded-lg text-gray-900  float-right font-bold btn-lg btn-info m-2 hover:bg-slate-600'>
-        <UploadWidget/>
-      </div> */}
-
-    </div>
-  );
-};
-
+     </> </div>
+       
+       
+    
+  )};
 export default Profile;

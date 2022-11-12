@@ -34,10 +34,18 @@ const ConnectWith = () => {
                     <h2 className="py-6 card-header">
                       {users.name}
 
-                      <h3 className="py-6">
+                      <p className="py-6">
                          {users.role}
-                      </h3>
+                      </p>
                     </h2>
+                    <div>
+                <figure>
+                  <figcaption>My Music</figcaption>
+                  <audio controls src={users.url}>
+                   <p>greatness</p>
+                  </audio>
+                </figure>
+              </div>
                     <>
                       <p className="card-body">{users.about_me}</p>
                     </>
