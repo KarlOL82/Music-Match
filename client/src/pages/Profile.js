@@ -3,11 +3,9 @@ import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
-import UploadWidget from './uploadWidget';
+// import UploadWidget from './uploadWidget';
 
 import Auth from "../utils/auth";
-
-
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -18,9 +16,7 @@ const Profile = () => {
 
   const user = data?.me || data?.user || {};
   console.log(data);
-  
 
-  
   const userData = useState({
     _id: "",
     name: "",
@@ -31,7 +27,6 @@ const Profile = () => {
     about_me: "",
   });
 
-    
   console.log(userData);
 
   if (Auth.loggedIn() && Auth.getProfile().data._id === userParam) {
@@ -59,39 +54,39 @@ const Profile = () => {
       <div className="bg bg3"></div>
       <div className="flex-row justify-center mb-3">
 
-        <h2 className="flex justify-center ">
-
+        <h2 className="text-xl float-left md:float-right">
+          Viewing {userParam ? `${user.username}'s` : "your"} profile.
         </h2>
 
-        <div className="flex justify-center pt-16 ">
-        <div className="bg-slate-300 p-12 text-gray-900 rounded-lg text-xl shadow-xl">
-        <div className="ViewingProfile font-bold">
-          Viewing {userParam ? `${user.username}'s` : "your"} profile
-          
+        <div className="col-12 col-md-10 mb-5">
+          {/* {userData
+            ? userData.map((userData) => ( */}
+
+          <div key={userData._id} className="text-center col-12 mb-3 pb-3">
+            <div className="p-3 bg-dark text-light">
+              <h2 className="py-6 card-header">
+                {user.name}
+
+                <p className="py-6">
+                  {user.role}
+
+                </p>
+              </h2>
+              <div>
+                <figure>
+                  <figcaption>My Music</figcaption>
+                  <audio controls src={user.url}>
+                   <p>greatness</p>
+                  </audio>
+                </figure>
+              </div>
+              <>
+                <p className="card-body">{user.about_me}</p>
+              </>
             </div>
-              
-                <div key={userData._id} className="text-center col-12 mb-3 pb-3">
-                  <div className="p-3 bg-dark text-light">
-                    <h2 className="py-6 card-header">
-                      Name: {user.name}
+          </div>
+          {/* ))
 
-
-
-                      <p className="py-6">
-
-                         Role: {user.role}
-
-                      </p>
-                    </h2>
-                    {/* <>{user.url}</> */}
-                    <>
-
-                      <p className="card-body "> Bio: {user.about_me}</p>
-
-                    </>
-                  </div>
-                </div>
-                 {/* ))
              : null}   */}
         </div>
         </div>
@@ -100,17 +95,18 @@ const Profile = () => {
             <Link
               className="btn text-xl bg-slate-300 rounded-lg text-gray-900  float-right font-bold btn-lg btn-info m-2 hover:bg-slate-600"
               to="/profileCreator"
-              >
+
+            >
 
               Update Profile
-
             </Link>
         </div>
         )}
-      <div className='btn text-xl bg-slate-300 rounded-lg text-gray-900  float-right font-bold btn-lg btn-info m-2 hover:bg-slate-600'>
+      </div>
+      {/* <div className='btn text-xl bg-slate-300 rounded-lg text-gray-900  float-right font-bold btn-lg btn-info m-2 hover:bg-slate-600'>
         <UploadWidget/>
-      </div>
-      </div>
+      </div> */}
+
     </div>
   );
 };
