@@ -99,7 +99,7 @@ const Profile = () => {
               className="btn text-xl bg-slate-300 rounded-lg text-gray-900  float-center font-bold btn-lg btn-info m-2 hover:bg-slate-600"
               to="/profileCreator"
             >
-              Update Profile
+              Update Profiles
             </Link>
           </div>
         )}
