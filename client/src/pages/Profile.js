@@ -59,14 +59,15 @@ const Profile = () => {
       <div className="bg bg3"></div>
       <div className="flex-row justify-center mb-3">
 
-        <h2 className="flex justify-center text-lx">
+        <h2 className="flex justify-center ">
 
-          Viewing {userParam ? `${user.username}'s` : "your"} profile.
         </h2>
         <div className="flex justify-center pt-16 ">
         <div className="bg-slate-300 p-12 text-gray-900 rounded-lg text-xl shadow-xl">
-          {/* {userData
-            ? userData.map((userData) => ( */}
+        <div className="ViewingProfile font-bold">
+          Viewing {userParam ? `${user.username}'s` : "your"} profile
+          
+            </div>
               
                 <div key={userData._id} className="text-center col-12 mb-3 pb-3">
                   <div className="p-3 bg-dark text-light">
@@ -85,28 +86,22 @@ const Profile = () => {
                  {/* ))
              : null}   */}
         </div>
-        <div className="col-12 col-md-10 mb-5"></div>
-        <div className="col-12 col-md-10 mb-5"></div>
-        <div className="col-12 col-md-10 mb-5"></div>
+        </div>
         {!userParam && (
-          <div
-          className="col-12 col-md-10 mb-3 p-3"
-          
-          >
+          <div className="">
             <Link
-              className="btn text-xl bg-slate-300 rounded-lg text-gray-900  float-center font-bold btn-lg btn-info m-2 hover:bg-slate-600"
+              className="btn text-xl bg-slate-300 rounded-lg text-gray-900  float-right font-bold btn-lg btn-info m-2 hover:bg-slate-600"
               to="/profileCreator"
               >
 
               Update Profile
 
             </Link>
-          </div>
-        )}
         </div>
-      </div>
+        )}
       <div className='btn text-xl bg-slate-300 rounded-lg text-gray-900  float-right font-bold btn-lg btn-info m-2 hover:bg-slate-600'>
         <UploadWidget/>
+      </div>
       </div>
     </div>
   );
