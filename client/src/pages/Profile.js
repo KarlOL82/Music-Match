@@ -54,9 +54,9 @@ const Profile = () => {
 
   return (
     <div>
-      <div class="bg"></div>
-      <div class="bg bg2"></div>
-      <div class="bg bg3"></div>
+      <div className="bg"></div>
+      <div className="bg bg2"></div>
+      <div className="bg bg3"></div>
       <div className="flex-row justify-center mb-3">
 
         <h2 className="text-xl float-left md:float-right">
@@ -73,9 +73,9 @@ const Profile = () => {
                     <h2 className="py-6 card-header">
                       {user.name}
 
-                      <h3 className="py-6">
+                      <p className="py-6">
                          {user.role}
-                      </h3>
+                      </p>
                     </h2>
                     <>
                       <p className="card-body">{user.about_me}</p>
