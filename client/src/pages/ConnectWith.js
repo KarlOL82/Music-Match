@@ -9,7 +9,7 @@ const ConnectWith = () => {
   const { loading, data } = useQuery(QUERY_USERS);
 
   const users = data?.users || data?.users || {};
-
+  console.log(users);
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -21,26 +21,31 @@ const ConnectWith = () => {
       {Auth.loggedIn() ? (
         <div className="my-3">
           <div className="card-header bg-dark text-light p-2 m-0">
-            <div>
-              {users
-                ? users.map((users) => 
-                <div key={users._id}>{users.username}</div>)
-                : null}
-            </div>
+          <div className="col-12 col-md-10 mb-5">
+          {users
+            ? users.map((userData) => (
+              
+                <div key={userData._id} className="text-center col-12 mb-3 pb-3">
+                  <div className="p-3 bg-dark text-light">
+                    <h2 className="py-6 card-header">
+                      {users.name}
+
+                      <h3 className="py-6">
+                         {users.role}
+                      </h3>
+                    </h2>
+                    <>
+                      <p className="card-body">{users.about_me}</p>
+                    </>
+                  </div>
+                </div>
+                 ))
+             : null}  
+        </div>
 
           </div>
           <div className="bg-light py-4">
-            {/* <blockquote
-          className="p-4"
-          style={{
-            fontSize: '1.5rem',
-            fontStyle: 'italic',
-            border: '2px dotted #1a1a1a',
-            lineHeight: '1.5',
-          }}
-        >
-          
-        </blockquote> */}
+            
           </div>
         </div>
       ) : (

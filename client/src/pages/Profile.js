@@ -53,30 +53,30 @@ const Profile = () => {
   return (
     <div>
       <div className="flex-row justify-center mb-3">
-        <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
+        <h2 className="col-12 col-md-10 bg-dark text-center text-light p-3 mb-5">
           Viewing {userParam ? `${user.username}'s` : "your"} profile.
         </h2>
         
         <div className="col-12 col-md-10 mb-5">
-          {userData
-            ? userData.map((userData) => (
+          {/* {userData
+            ? userData.map((userData) => ( */}
               
-                <div key={userData._id} className="col-12 mb-3 pb-3">
+                <div key={userData._id} className="text-center col-12 mb-3 pb-3">
                   <div className="p-3 bg-dark text-light">
-                    <h5 className="card-header">
-                      {userData.name}
+                    <h2 className="py-6 card-header">
+                      {user.name}
 
-                      <span style={{ fontSize: "0.825rem" }}>
-                        on {userData.role}
-                      </span>
-                    </h5>
+                      <h3 className="py-6">
+                         {user.role}
+                      </h3>
+                    </h2>
                     <>
-                      <p className="card-body">{userData.about_me}</p>
+                      <p className="card-body">{user.about_me}</p>
                     </>
                   </div>
                 </div>
-              ))
-            : null}
+                 {/* ))
+             : null}   */}
         </div>
         <div className="col-12 col-md-10 mb-5"></div>
         <div className="col-12 col-md-10 mb-5"></div>
