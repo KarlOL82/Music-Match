@@ -4,6 +4,8 @@ import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 // import ProfileCreator from "./ProfileCreator";
+// import { UPDATE_PROFILE } from "../utils/mutations";
+// import { useMutation } from "@apollo/client";
 
 import Auth from "../utils/auth";
 // import { User } from '../../../server/models';
@@ -17,6 +19,29 @@ const Profile = () => {
 
   const user = data?.me || data?.user || {};
 
+  // const ShowProfile = async (e) => {
+  //   useEffect(() => {
+  //     ShowProfile();
+  //   }, []);
+
+  //   console.log("it works");
+  //   console.log(userData);
+  //   e.preventDefault();
+  //   await updateProfile({
+  //     variables: { userData },
+  //   });
+
+  //   setUserData((prevState) => ({
+  //     ...prevState,
+  //     [name]: value,
+  //   }));
+  //   console.log(userData);  
+    
+  // };
+
+  
+
+  // const [updateProfile] = useMutation(UPDATE_PROFILE);
   const userData = useState({
     _id: "",
     name: "",
@@ -28,8 +53,10 @@ const Profile = () => {
     role_interest: "",
     url: "",
     about_me: "",
-    
   });
+
+    
+  // console.log(userData.name);
 
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Navigate to="/me" />;
@@ -58,24 +85,26 @@ const Profile = () => {
         <div className="col-12 col-md-10 mb-5">
           {userData
             ? userData.map((userData) => (
-               <> <div key={userData._id}>{userData.name}</div>
-               <div>{userData.about_me}</div>
-               </>
-                
-                
+                <div key={userData._id} className="col-12 mb-3 pb-3">
+                  <div className="p-3 bg-dark text-light">
+                    <h5 className="card-header">
+                      {userData.name}
+
+                      <span style={{ fontSize: "0.825rem" }}>
+                        on {userData.role}
+                      </span>
+                    </h5>
+                    <>
+                      <p className="card-body">{userData.about_me}</p>
+                    </>
+                  </div>
+                </div>
               ))
             : null}
-          
-                                
-                              
         </div>
         <div className="col-12 col-md-10 mb-5"></div>
-        <div className="col-12 col-md-10 mb-5">
-          
-        </div>
-        <div className="col-12 col-md-10 mb-5">
-          
-        </div>
+        <div className="col-12 col-md-10 mb-5"></div>
+        <div className="col-12 col-md-10 mb-5"></div>
         {!userParam && (
           <div
             className="col-12 col-md-10 mb-3 p-3"
@@ -85,7 +114,7 @@ const Profile = () => {
               className="btn text-xl text-white float-right font-bold btn-lg btn-light m-2"
               to="/profileCreator"
             >
-              Link to ProfileCreator(Still need localStoragese up)
+              Update Profile
             </Link>
           </div>
         )}

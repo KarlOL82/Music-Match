@@ -1,7 +1,7 @@
 import { useMutation } from "@apollo/client";
 import React, { useState } from "react";
 import { UPDATE_PROFILE } from "../utils/mutations";
-// import React from "react";
+import {Navigate} from "react-router-dom";
 
 //******************* NOTES **********************/
 // Currently working on adding this info to local storage
@@ -29,6 +29,7 @@ const ProfileCreator = () => {
     await updateProfile({
       variables: {userData}
     });
+    return <Navigate to="/me" />;
 
 
   };
