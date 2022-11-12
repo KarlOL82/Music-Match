@@ -64,21 +64,24 @@ const Profile = () => {
           Viewing {userParam ? `${user.username}'s` : "your"} profile.
         </h2>
         
-        <div className="col-12 col-md-10 mb-5">
+        <div className="col-12 p-10 col-md-10 mb-5">
           {/* {userData
             ? userData.map((userData) => ( */}
               
                 <div key={userData._id} className="text-center col-12 mb-3 pb-3">
-                  <div className="p-3 bg-dark text-light">
-                    <h2 className="py-6 card-header">
+                  <div className="p-3 bg-dark text-gray-800">
+                    <h2 className="py-6 card-header text-3xl font-bolder">
                       {user.name}
 
+
                       <p className="py-6">
+
                          {user.role}
                       </p>
                     </h2>
+                    {/* <>{user.url}</> */}
                     <>
-                      <p className="card-body">{user.about_me}</p>
+                      <p className="card-body"><span className="text-2xl font-bolder text-yellow-500">Bio</span><br></br>{user.about_me}</p>
                     </>
                   </div>
                 </div>
