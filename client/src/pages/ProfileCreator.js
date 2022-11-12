@@ -15,7 +15,7 @@ const ProfileCreator = () => {
   const [updateProfile] = useMutation(UPDATE_PROFILE)
   const [userData, setUserData] = useState({
     name: "",
-    role: "",
+    role: null,
     
     url: "",
     about_me: "",
@@ -26,9 +26,11 @@ const ProfileCreator = () => {
     console.log("it works");
     console.log(userData);
     e.preventDefault();
-    await updateProfile({
+    const res = await updateProfile({
+
       variables: {userData}
     });
+    console.log(res);
     return <Navigate to="/me" />;
 
 

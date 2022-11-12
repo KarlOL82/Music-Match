@@ -18,7 +18,7 @@ const Profile = () => {
   });
 
   const user = data?.me || data?.user || {};
-
+  console.log(data);
   // const ShowProfile = async (e) => {
   //   useEffect(() => {
   //     ShowProfile();
@@ -58,7 +58,8 @@ const Profile = () => {
     
   // console.log(userData.name);
 
-  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+  if (Auth.loggedIn() && Auth.getProfile().data._id === userParam) {
+    console.log("logged in");
     return <Navigate to="/me" />;
   }
 
@@ -81,11 +82,11 @@ const Profile = () => {
         <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
           Viewing {userParam ? `${user.username}'s` : "your"} profile.
         </h2>
-
+        console.log(userData);
         <div className="col-12 col-md-10 mb-5">
           {userData
             ? userData.map((userData) => (
-                <div key={userData._id} className="col-12 mb-3 pb-3">
+                <div key={userData.username} className="col-12 mb-3 pb-3">
                   <div className="p-3 bg-dark text-light">
                     <h5 className="card-header">
                       {userData.name}

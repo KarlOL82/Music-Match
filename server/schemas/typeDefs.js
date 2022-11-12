@@ -20,7 +20,7 @@ const typeDefs = gql`
   # }
 
   input ProfileData {
-    
+    _id: String!
     name: String
     role: String
     url: String
