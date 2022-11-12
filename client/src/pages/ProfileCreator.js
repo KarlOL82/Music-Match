@@ -2,6 +2,7 @@ import { useMutation } from "@apollo/client";
 import React, { useState } from "react";
 import { UPDATE_PROFILE } from "../utils/mutations";
 import {Navigate} from "react-router-dom";
+import UploadWidget from "./uploadWidget";
 
 //******************* NOTES **********************/
 // Currently working on adding this info to local storage
@@ -11,7 +12,7 @@ import {Navigate} from "react-router-dom";
 
 const ProfileCreator = () => {
   // const [formData, updateFormData] = React.useState(initialFormData);
-
+  const[url,setUrl] = useState("");
   const [updateProfile] = useMutation(UPDATE_PROFILE)
   const [userData, setUserData] = useState({
     name: "",
@@ -24,7 +25,8 @@ const ProfileCreator = () => {
   const handleSubmit = async (e) => {
 
     console.log("it works");
-    console.log(userData);
+    console.log(userData.url);
+    userData.url= url;
     e.preventDefault();
     const res = await updateProfile({
 
@@ -41,10 +43,12 @@ const ProfileCreator = () => {
       e.target.type === "checkedbox" ? e.target.checked : e.target.value;
     const name = e.target.name;
     console.log("value " + value);
+    console.log(url);
 
     setUserData((prevState) => ({
       ...prevState,
       [name]: value,
+      url:url,
     }));
     console.log(userData);
   };
@@ -228,9 +232,17 @@ const ProfileCreator = () => {
                 onChange={handleChange}
               />
             </div>
+            {url ?(
+              <p>Audio Uploaded</p>
+            ):(
+            <div className="font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600">
+
+              <UploadWidget setUrl={setUrl} name= 'url'/>
+            </div>
+            )
+            }
             <button className="  font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600" onClick={handleSubmit}>Submit</button>
           </section>
-
           <section>
             {/* This will be where cloudnairy button to upload photo will go  */}
             

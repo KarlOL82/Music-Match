@@ -1,27 +1,23 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 
-const UploadWidget = ()=> {
-    const cloudinaryRef = useRef();
-    const widgetRef = useRef();
-    useEffect(() =>{
-        cloudinaryRef.current = window.cloudinary;
-        widgetRef.current = cloudinaryRef.current.createUploadWidget({
-            cloudName: "dw0jmj5xy",
-    uploadPreset: "cwmwrpka",
-    sources: [
-        "local",
-        "url",
-        "dropbox",
-        "google_drive"
-    ],
-    googleApiKey: "<image_search_google_api_key>",
-    showAdvancedOptions: false,
-    cropping: true,
-    multiple: false,
-    defaultSource: "local",
-    styles: {
-        palette: {
+const UploadWidget = ({ setUrl }) => {
+  const cloudinaryRef = useRef();
+  const widgetRef = useRef();
+  useEffect(() => {
+    cloudinaryRef.current = window.cloudinary;
+    widgetRef.current = cloudinaryRef.current.createUploadWidget(
+      {
+        cloudName: "dw0jmj5xy",
+        uploadPreset: "cwmwrpka",
+        sources: ["local", "url", "dropbox", "google_drive"],
+        googleApiKey: "<image_search_google_api_key>",
+        showAdvancedOptions: false,
+        cropping: true,
+        multiple: false,
+        defaultSource: "local",
+        styles: {
+          palette: {
             window: "#464040",
             sourceBg: "#292222",
             windowBorder: "#c7a49f",
@@ -34,28 +30,31 @@ const UploadWidget = ()=> {
             complete: "#78b3b4",
             error: "#ff6666",
             textDark: "#4C2F1A",
-            textLight: "#D8CFCF"
-        },
-        fonts: {
+            textLight: "#D8CFCF",
+          },
+          fonts: {
             default: null,
             "'Merriweather', serif": {
-                url: "https://fonts.googleapis.com/css?family=Merriweather",
-                active: true
-            }
+              url: "https://fonts.googleapis.com/css?family=Merriweather",
+              active: true,
+            },
+          },
+        },
+      },
+      (err, info) => {
+        if (!err) {
+          if (info.info.url) {
+            setUrl(info.info.url);
+          }
         }
-    }
-},
- (err, info) => {
-   if (!err) {    
-     console.log("Upload Widget event - ", info);
-   }
-        })
-    }, [])
-    return (
-        <button onClick = {()=> widgetRef.current.open()}>
-            Upload Music
-        </button>
-    )
-}
+      }
+    );
+  }, [setUrl]);
+  return (
+    <button onClick={() => widgetRef.current.open()}>
+      Upload Music
+    </button>
+  );
+};
 
 export default UploadWidget;
