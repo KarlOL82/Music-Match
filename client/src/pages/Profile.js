@@ -62,6 +62,7 @@ const Profile = () => {
         <h2 className="flex justify-center ">
 
         </h2>
+
         <div className="flex justify-center pt-16 ">
         <div className="bg-slate-300 p-12 text-gray-900 rounded-lg text-xl shadow-xl">
         <div className="ViewingProfile font-bold">
@@ -74,12 +75,19 @@ const Profile = () => {
                     <h2 className="py-6 card-header">
                       Name: {user.name}
 
+
+
                       <p className="py-6">
+
                          Role: {user.role}
+
                       </p>
                     </h2>
+                    {/* <>{user.url}</> */}
                     <>
+
                       <p className="card-body "> Bio: {user.about_me}</p>
+
                     </>
                   </div>
                 </div>

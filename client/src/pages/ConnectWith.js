@@ -14,6 +14,8 @@ const ConnectWith = () => {
     return <div>Loading...</div>;
   }
 
+  
+
   return (
     <main>
       <h3>Find Your Next Connection</h3>
@@ -25,9 +27,9 @@ const ConnectWith = () => {
           <div className="card-header bg-dark text-light p-2 m-0">
           <div className="col-12 col-md-10 mb-5">
           {users
-            ? users.map((userData) => (
+            ? users.map((users) => (
               
-                <div key={userData._id} className="text-center col-12 mb-3 pb-3">
+                <div key={users._id} className="text-center col-12 mb-3 pb-3">
                   <div className="p-3 bg-dark text-light">
                     <h2 className="py-6 card-header">
                       {users.name}
