@@ -51,16 +51,13 @@ const ProfileCreator = () => {
 
   return (
     <>
-      <h1 className="flex justify-center">Edit Profile</h1>
-
-
       <div className="flex justify-center pt-16 ">
       <div class="bg"></div>
       <div class="bg bg2"></div>
       <div class="bg bg3"></div>
         <form onSubmit={handleSubmit}>
 
-          <section  className="bg-slate-300 p-3 text-gray-900 rounded-lg text-xl">
+          <section  className="bg-slate-300 p-3 text-gray-900 rounded-lg text-xl shadow-xl ">
           <h1 className="flex justify-center font-bold">Edit Profile</h1>
 
             {/* This div is for Tailwind edits */}
@@ -178,6 +175,7 @@ const ProfileCreator = () => {
 
             {/* This will be for picking what intrest they have */}
             {/* <label>What Do You Want To See?</label> */}
+              <label className="about-me">About me </label>
             <div className="field col-12 col-md-10 mb-3 p-3">
               {/* <div className="role-interest-container">
                 <input
@@ -217,10 +215,10 @@ const ProfileCreator = () => {
               </div> */}
 
               {/* label for about me  */}
-              <label className="about-me">About me </label>
-              <input
+              <textarea
                 id="about"
-                type="text"
+                type="textarea"
+                rows="4"
                 name="about_me"
                 required={true}
                 placeholder="Tell me about yourself"

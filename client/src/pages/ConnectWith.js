@@ -17,7 +17,9 @@ const ConnectWith = () => {
   return (
     <main>
       <h3>Find Your Next Connection</h3>
-
+      <div class="bg"></div>
+      <div class="bg bg2"></div>
+      <div class="bg bg3"></div>
       {Auth.loggedIn() ? (
         <div className="my-3">
           <div className="card-header bg-dark text-light p-2 m-0">
