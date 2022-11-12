@@ -16,12 +16,10 @@ export const QUERY_USERDATA = gql`
     userData {
       _id
       name
-      display_role
       role
-      role_interest
       url
       about_me
-      matches
+      
     }
   }
 
@@ -32,6 +30,12 @@ export const QUERY_USERS = gql`
     users {
       username
       _id
+      email
+      name
+      role
+      url
+      about_me
+      
     }
   }
 `;
@@ -42,6 +46,11 @@ export const QUERY_ME = gql`
       _id
       username
       email
+      name
+      role
+      url
+      about_me
+      
     }
   }
 `;

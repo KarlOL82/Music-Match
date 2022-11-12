@@ -19,7 +19,29 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  // genres: [],
+  name: {
+    type: String,
+    
+  },
+  role: {
+    type: String,
+    enum: ["musician", "producer", "artist"]
+
+  },
+  url: {
+    type: String,
+  },
+  about_me: {
+    type: String
+  },
+  // matches: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: 'User',
+  //   }
+  // ]
+
+  
 });
 
 userSchema.pre('save', async function (next) {

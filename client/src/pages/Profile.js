@@ -1,16 +1,13 @@
-
-import React, {useState}from 'react';
-import { Navigate, useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Navigate, useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
+import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import UploadWidget from './uploadWidget';
-import { QUERY_USER, QUERY_ME } from '../utils/queries';
-import Auth from '../utils/auth';
 import ProfileCreator from '../pages/ProfileCreator';
+import Auth from "../utils/auth";
 
 
-
-// import { User } from '../../../server/models';
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -20,22 +17,25 @@ const Profile = () => {
   });
 
   const user = data?.me || data?.user || {};
+  console.log(data);
+  
 
+  
   const userData = useState({
     _id: "",
     name: "",
-    // dob_day:"",
-    // dob_month:"",
-    // dob_year:"",
     display_role: false,
-    role: "",
+    role: [""],
     role_interest: "",
     url: "",
     about_me: "",
-    matches: [],
   });
 
-  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+    
+  console.log(userData);
+
+  if (Auth.loggedIn() && Auth.getProfile().data._id === userParam) {
+    console.log("logged in");
     return <Navigate to="/me" />;
   }
 
@@ -43,14 +43,14 @@ const Profile = () => {
     return <div>Loading...</div>;
   }
 
-  if (!user?.username) {
-    return (
-      <h4>
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
-      </h4>
-    );
-  }
+  // if (!user?.username) {
+  //   return (
+  //     <h4>
+  //       You need to be logged in to see this. Use the navigation links above to
+  //       sign up or log in!
+  //     </h4>
+  //   );
+  // }
 
   return (
     <div>
@@ -58,28 +58,36 @@ const Profile = () => {
       <div class="bg bg2"></div>
       <div class="bg bg3"></div>
       <div className="flex-row justify-center mb-3">
+
         <h2 className="text-xl float-left md:float-right">
+
           Viewing {userParam ? `${user.username}'s` : "your"} profile.
         </h2>
+        
+        <div className="col-12 col-md-10 mb-5">
+          {/* {userData
+            ? userData.map((userData) => ( */}
+              
+                <div key={userData._id} className="text-center col-12 mb-3 pb-3">
+                  <div className="p-3 bg-dark text-light">
+                    <h2 className="py-6 card-header">
+                      {user.name}
 
-        <div className="col-12 col-md-10 mb-5">
-          {userData
-            ? userData.map((userData) => (
-                <div key={userData._id}>{userData.name}</div>
-              ))
-            : null}
-          <span className="text-gray-200 text-sm">{userData.role}</span>
-          <span className="text-gray-200 text-sm">{userData.role_interest}</span>
-                                
-                              
+                      <h3 className="py-6">
+                         {user.role}
+                      </h3>
+                    </h2>
+                    <>
+                      <p className="card-body">{user.about_me}</p>
+                    </>
+                  </div>
+                </div>
+                 {/* ))
+             : null}   */}
         </div>
-        <div className="col-12 col-md-10 mb-5">{ProfileCreator.role}</div>
-        <div className="col-12 col-md-10 mb-5">
-          {ProfileCreator.display_role}
-        </div>
-        <div className="col-12 col-md-10 mb-5">
-          {ProfileCreator.role_interest}
-        </div>
+        <div className="col-12 col-md-10 mb-5"></div>
+        <div className="col-12 col-md-10 mb-5"></div>
+        <div className="col-12 col-md-10 mb-5"></div>
         {!userParam && (
           <div
             className="col-12 col-md-10 mb-3 p-3"
@@ -89,7 +97,9 @@ const Profile = () => {
               className="btn text-xl bg-slate-300 rounded-lg text-gray-900  float-center font-bold btn-lg btn-info m-2 hover:bg-slate-600"
               to="/profileCreator"
             >
-              Edit Profile
+
+              Update Profile
+
             </Link>
           </div>
         )}
