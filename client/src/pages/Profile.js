@@ -54,9 +54,9 @@ const Profile = () => {
 
   return (
     <div>
-      <div class="bg"></div>
-      <div class="bg bg2"></div>
-      <div class="bg bg3"></div>
+      <div className="bg"></div>
+      <div className="bg bg2"></div>
+      <div className="bg bg3"></div>
       <div className="flex-row justify-center mb-3">
 
         <h2 className="text-xl float-left md:float-right">
@@ -64,21 +64,22 @@ const Profile = () => {
           Viewing {userParam ? `${user.username}'s` : "your"} profile.
         </h2>
         
-        <div className="col-12 col-md-10 mb-5">
+        <div className="col-12 p-10 col-md-10 mb-5">
           {/* {userData
             ? userData.map((userData) => ( */}
               
                 <div key={userData._id} className="text-center col-12 mb-3 pb-3">
                   <div className="p-3 bg-dark text-gray-800">
-                    <h2 className="py-6 card-header">
+                    <h2 className="py-6 card-header text-3xl font-bolder">
                       {user.name}
 
-                      <h3 className="py-6">
+                      <h3 className="py-6 text-2xl">
                          {user.role}
                       </h3>
                     </h2>
+                    {/* <>{user.url}</> */}
                     <>
-                      <p className="card-body">{user.about_me}</p>
+                      <p className="card-body"><span className="text-2xl font-bolder text-yellow-500">Bio</span><br></br>{user.about_me}</p>
                     </>
                   </div>
                 </div>
