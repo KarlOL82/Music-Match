@@ -75,10 +75,10 @@ const Profile = () => {
         </div>
         <div className="col-12 col-md-10 mb-5">{ProfileCreator.role}</div>
         <div className="col-12 col-md-10 mb-5">
-          {ProfileCreator.display_role}
+          
         </div>
         <div className="col-12 col-md-10 mb-5">
-          {ProfileCreator.role_interest}
+          
         </div>
         {!userParam && (
           <div
