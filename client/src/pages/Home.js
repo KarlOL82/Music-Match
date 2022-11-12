@@ -36,7 +36,7 @@ const Home = () => {
 
         <div className="p-6">
           <Link
-            className="btn text-xl text-yellow-500 bg-yellow-800 rounded-lg font-bold btn-lg btn-light p-3 m-6"
+            className="btn  text-yellow-500 bg-yellow-800 rounded-lg font-bold btn-lg btn-light p-3 m-6"
             to="/me"
           >
             {Profile}Go to Profile
