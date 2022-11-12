@@ -77,43 +77,7 @@ const ProfileCreator = () => {
                 onChange={handleChange}
               />
             </div>
-            {/* this container will collect all of the birthday digits */}
-            {/* <label>Birthday </label>
-            <div className="birthday-container">
-              <div className="field col-12 col-md-10 mb-3 p-3">
-                <input
-                  id="dob_day"
-                  type="number"
-                  name="dob_day"
-                  placeholder="DD"
-                  required={true}
-                  value={""}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="field col-12 col-md-10 mb-3 p-3">
-                <input
-                  id="dob_month"
-                  type="number"
-                  name="dob_month"
-                  placeholder="MM"
-                  required={true}
-                  value={""}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="field col-12 col-md-10 mb-3 p-3">
-                <input
-                  id="dob_year"
-                  type="number"
-                  name="dob_year"
-                  placeholder="YYYY"
-                  required={true}
-                  value={""}
-                  onChange={handleChange}
-                />
-              </div>
-            </div> */}
+            
 
             {/* this will allow the user to select if they are a artist, musician, or producer */}
             <label>Roles</label>
@@ -177,48 +141,10 @@ const ProfileCreator = () => {
             </div>
             </div>
 
-            {/* This will be for picking what intrest they have */}
-            {/* <label>What Do You Want To See?</label> */}
+            
               <label className="about-me">About me </label>
             <div className="field col-12 col-md-10 mb-3 p-3">
-              {/* <div className="role-interest-container">
-                <input
-                  id="artist_interest"
-                  type="radio"
-                  name="role_interest"
-                  required={true}
-                  value={"artist"}
-                  onChange={handleChange}
-                  // this will leave the box un-selected
-                  checked={userData.role_interest === "artist"}
-                />
-                <label className="artist"> Artist </label>
-                <input
-                  id="musician_interest"
-                  type="radio"
-                  name="role_interest"
-                  required={true}
-                  value={"musician"}
-                  onChange={handleChange}
-                  // this will leave the box un-selected
-                  checked={userData.role_interest === "musician"}
-                />
-                <label className="musician"> Musician </label>
-
-                <input
-                  id="producer_interest"
-                  type="radio"
-                  name="role_interest"
-                  required={true}
-                  value={"producer"}
-                  onChange={handleChange}
-                  // this will leave the box un-selected
-                  checked={userData.role_interest === "producer"}
-                />
-                <label className="producer"> Producer</label>
-              </div> */}
-
-              {/* label for about me  */}
+              
               <textarea
                 id="about"
                 type="textarea"
