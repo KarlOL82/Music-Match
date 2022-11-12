@@ -73,9 +73,11 @@ const Profile = () => {
                     <h2 className="py-6 card-header text-3xl font-bolder">
                       {user.name}
 
-                      <h3 className="py-6 text-2xl">
+
+                      <p className="py-6">
+
                          {user.role}
-                      </h3>
+                      </p>
                     </h2>
                     {/* <>{user.url}</> */}
                     <>
