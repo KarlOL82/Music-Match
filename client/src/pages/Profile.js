@@ -3,8 +3,10 @@ import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
-
+import UploadWidget from './uploadWidget';
+import ProfileCreator from '../pages/ProfileCreator';
 import Auth from "../utils/auth";
+
 
 
 const Profile = () => {
@@ -52,8 +54,13 @@ const Profile = () => {
 
   return (
     <div>
+      <div class="bg"></div>
+      <div class="bg bg2"></div>
+      <div class="bg bg3"></div>
       <div className="flex-row justify-center mb-3">
-        <h2 className="col-12 col-md-10 bg-dark text-center text-light p-3 mb-5">
+
+        <h2 className="text-xl float-left md:float-right">
+
           Viewing {userParam ? `${user.username}'s` : "your"} profile.
         </h2>
         
@@ -87,13 +94,18 @@ const Profile = () => {
             style={{ border: "1px dotted #1a1a1a" }}
           >
             <Link
-              className="btn text-xl text-white float-right font-bold btn-lg btn-light m-2"
+              className="btn text-xl bg-slate-300 rounded-lg text-gray-900  float-center font-bold btn-lg btn-info m-2 hover:bg-slate-600"
               to="/profileCreator"
             >
+
               Update Profile
+
             </Link>
           </div>
         )}
+      </div>
+      <div className='btn text-xl bg-slate-300 rounded-lg text-gray-900  float-right font-bold btn-lg btn-info m-2 hover:bg-slate-600'>
+        <UploadWidget/>
       </div>
     </div>
   );

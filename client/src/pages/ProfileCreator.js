@@ -53,9 +53,16 @@ const ProfileCreator = () => {
     <>
       <h1 className="flex justify-center">Edit Profile</h1>
 
-      <div className="flex justify-center">
+
+      <div className="flex justify-center pt-16 ">
+      <div class="bg"></div>
+      <div class="bg bg2"></div>
+      <div class="bg bg3"></div>
         <form onSubmit={handleSubmit}>
-          <section>
+
+          <section  className="bg-slate-300 p-3 text-gray-900 rounded-lg text-xl">
+          <h1 className="flex justify-center font-bold">Edit Profile</h1>
+
             {/* This div is for Tailwind edits */}
             <div className="field col-12 col-md-10 mb-3 p-3">
               <label className="name">What do you go by? </label>
@@ -109,9 +116,10 @@ const ProfileCreator = () => {
 
             {/* this will allow the user to select if they are a artist, musician, or producer */}
             <label>Roles</label>
+            <div className="field col-12 col-md-10 mb-3 p-3">
             <div className="role-container">
               {/* This div is for Tailwind edits */}
-              <div className="field col-12 col-md-10 mb-3 p-3">
+              <div className="">
                 <input
                   id="artist_role"
                   type="radio"
@@ -124,7 +132,7 @@ const ProfileCreator = () => {
                 />
                 <label className="artist"> Artist </label>
               </div>
-              <div className="field col-12 col-md-10 mb-3 p-3">
+              <div className="field">
                 <input
                   id="musician_role"
                   type="radio"
@@ -137,7 +145,7 @@ const ProfileCreator = () => {
                 />
                 <label className="musician"> Musician </label>
               </div>
-              <div className="field col-12 col-md-10 mb-3 p-3">
+              <div className="field ">
                 <input
                   id="producer_role"
                   type="radio"
@@ -152,8 +160,10 @@ const ProfileCreator = () => {
               </div>
             </div>
             {/* this is a checkbox to display role tag */}
-            {/* <div className="field col-12 col-md-10 mb-3 p-3">
-              <label className="display-role ">Display Role Tag</label>
+
+            <div className="">
+              <label className="display-role col-12 col-md-10 mb-3 p-3 ">Display Role Tag</label>
+
               <input
                 id="display_role"
                 type="checkbox"
@@ -162,7 +172,10 @@ const ProfileCreator = () => {
                 // this will leave the box un-selected
                 checked={userData.display_role}
               />
-            </div> */}
+
+            </div>
+            </div>
+
             {/* This will be for picking what intrest they have */}
             {/* <label>What Do You Want To See?</label> */}
             <div className="field col-12 col-md-10 mb-3 p-3">
@@ -215,22 +228,25 @@ const ProfileCreator = () => {
                 onChange={handleChange}
               />
             </div>
-            <input type="text" />
+            <button className="  font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600" onClick={handleSubmit}>Submit</button>
           </section>
-          {/* <section>
-           
 
-            <label className="uploadProfile">Upload photo</label>
-            <input
-              type="url"
-              name="url"
-              id="url"
-              onChange={handleChange}
-              // this way the user doesnt have to put a photo in
-              required={false}
-            />
-          </section> */}
-          <button onClick={handleSubmit}>Submit</button>
+          <section>
+            {/* This will be where cloudnairy button to upload photo will go  */}
+            
+              {/* <label className="uploadProfile">Upload photo</label>
+              <input
+                type="url"
+                name="url"
+                id="url"
+                onChange={handleChange}
+                // this way the user doesnt have to put a photo in
+                required={false}
+              /> */}
+           
+          </section>
+         
+
         </form>
       </div>
     </>
