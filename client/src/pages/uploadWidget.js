@@ -53,7 +53,7 @@ const UploadWidget = ()=> {
     }, [])
     return (
         <button onClick = {()=> widgetRef.current.open()}>
-            upload button
+            Upload Music
         </button>
     )
 }
