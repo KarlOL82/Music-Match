@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import UploadWidget from './uploadWidget';
-import ProfileCreator from '../pages/ProfileCreator';
+
 import Auth from "../utils/auth";
 
 
@@ -69,7 +69,7 @@ const Profile = () => {
             ? userData.map((userData) => ( */}
               
                 <div key={userData._id} className="text-center col-12 mb-3 pb-3">
-                  <div className="p-3 bg-dark text-light">
+                  <div className="p-3 bg-dark text-gray-800">
                     <h2 className="py-6 card-header">
                       {user.name}
 
