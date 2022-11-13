@@ -34,7 +34,7 @@ const ConnectWith = () => {
 
   return (
     <main>
-      <h3 className="text-2xl text-teal-400 text-center py-3">Find Your Next Connection</h3>
+      <h3 className="text-2xl text-gray-900 text-center py-3">Find Your Next Connection</h3>
       <div className="bg"></div>
       <div className="bg bg2"></div>
       <div className="bg bg3"></div>
