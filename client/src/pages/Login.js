@@ -52,8 +52,8 @@ const Login = (props) => {
       <div class="bg bg2"></div>
       <div class="bg bg3"></div>
       <div className="col-12 col-lg-10">
-        <div className="card bg-slate-300 p-3 text-gray-900 rounded-lg">
-          <h4 className="card-header  flex justify-center  font-bold bg-dark text-light p-2">Login</h4>
+        <div className=" bg-slate-300 p-3 text-gray-900 rounded-lg">
+          <h4 className=" flex justify-center  font-bold bg-dark text-light p-2">Login</h4>
           <div className="">
             {data ? (
               <p>
@@ -62,6 +62,7 @@ const Login = (props) => {
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
+                <div className="field col-12 col-md-10 mb-3 p-3">
                 <input
                   className="form-input"
                   placeholder="Your email"
@@ -70,6 +71,8 @@ const Login = (props) => {
                   value={formState.email}
                   onChange={handleChange}
                 />
+                </div>
+                <div className="field col-12 col-md-10 mb-3 p-3">
                 <input
                   className="form-input "
                   placeholder="******"
@@ -78,6 +81,7 @@ const Login = (props) => {
                   value={formState.password}
                   onChange={handleChange}
                 />
+                </div>
                 <button
                   className="btn btn-block btn-primary  px-1 font-bold rounded-lg hover:bg-slate-600"
                   style={{ cursor: 'pointer' }}

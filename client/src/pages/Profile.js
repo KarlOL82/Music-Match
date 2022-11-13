@@ -38,14 +38,19 @@ const Profile = () => {
     return <div>Loading...</div>;
   }
 
-  // if (!user?.username) {
-  //   return (
-  //     <h4>
-  //       You need to be logged in to see this. Use the navigation links above to
-  //       sign up or log in!
-  //     </h4>
-  //   );
-  // }
+  if (!user?.username) {
+    return (
+  <div className="flex justify-center">
+    <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+        <p className="text-center py-48 text-3xl text-white">
+          You need to be logged in to share your thoughts. Please{" "}
+          <Link to="/login"><span className="text-teal-400">login</span></Link> or <Link to="/signup"><span className="text-teal-400">signup.</span></Link>
+        </p>
+    </div>
+    );
+  }
 
   return (
     <div>
@@ -65,17 +70,17 @@ const Profile = () => {
 
                   <p className="py-6">{user.role}</p>
                 </h2>
+                <>
+                  <p className="card-body">{user.about_me}</p>
+                </>
                 <div>
                   <figure>
-                    <figcaption>My Music</figcaption>
+                    <figcaption className="py-3">My Music</figcaption>
                     <audio controls src={user.url}>
                       <p>greatness</p>
                     </audio>
                   </figure>
                 </div>
-                <>
-                  <p className="card-body">{user.about_me}</p>
-                </>
               </div>
             </div>
             <>

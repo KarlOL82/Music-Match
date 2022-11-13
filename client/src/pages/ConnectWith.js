@@ -17,7 +17,9 @@ const ConnectWith = () => {
 
   console.log(users);
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>
+      Loading...
+      </div>;
   }
 
 
@@ -32,7 +34,7 @@ const ConnectWith = () => {
 
   return (
     <main>
-      <h3>Find Your Next Connection</h3>
+      <h3 className="text-2xl text-teal-400 text-center py-3">Find Your Next Connection</h3>
       <div className="bg"></div>
       <div className="bg bg2"></div>
       <div className="bg bg3"></div>
@@ -42,10 +44,12 @@ const ConnectWith = () => {
           <div className="col-12 col-md-10 mb-5 ">
           {users
             ? users.map((user) => (
-              
+              <div className="flex justify-center">
               <SwipeableCard className='swipe ' key={user.username} onSwipe={(dir) => swiped(dir, user.username)} preventSwipe={['up', 'down']} onCardLeftScreen={(dir) => outOfFrame(user.username, console.log('you swiped '+ dir + ' on ' + user.username))}>
                 <div key={user._id} className="text-center col-12 mb-3 pb-3 ">
-                  <div className="p-3 bg-dark bg-opacity-50 text-white main-card ">
+
+                  <div className="p-3 pb-6 bg-dark text-gray-900 main-card ">
+
                     <div className="header-div ">
                       <h1 className="py-6 card-header text-2xl">
                         {user.username}
@@ -54,7 +58,7 @@ const ConnectWith = () => {
                         {user.role}
                       </h2>
                     </div>
-                    
+                      <h3 className="card-body">{user.about_me}</h3>
                     <div>
                       <figure className="justify-center ">
                         <figcaption>My Music</figcaption>
@@ -63,29 +67,26 @@ const ConnectWith = () => {
                           </audio>
                      </figure>
                     </div>
-
-                      <h3 className="card-body">{user.about_me}</h3>
-
                   </div>
                 </div>
                 </SwipeableCard> 
+             </div>
                  ))
              : null}  
         </div>
-
           </div>
           <div className="bg-light py-4">
             
           </div>
         </div>
-      ) : (
-        <p>
+        ) : (
+          <p className="text-center py-48 text-3xl text-white">
           You need to be logged in to share your thoughts. Please{" "}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          <Link to="/login"><span className="text-teal-400">login</span></Link> or <Link to="/signup"><span className="text-teal-400">signup.</span></Link>
         </p>
       )}
-    </main>
-  );
-};
-
-export default ConnectWith;
+      </main>
+      );
+    };
+    
+    export default ConnectWith;
