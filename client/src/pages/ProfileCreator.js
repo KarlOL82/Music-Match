@@ -1,7 +1,7 @@
 import { useMutation } from "@apollo/client";
 import React, { useState } from "react";
 import { UPDATE_PROFILE } from "../utils/mutations";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import UploadWidget from "./uploadWidget";
 
 //******************* NOTES **********************/
@@ -31,7 +31,19 @@ const ProfileCreator = () => {
       variables: { userData },
     });
     console.log(res);
-    return <Navigate to="/me" />;
+    
+    const navigate = useNavigate;
+
+    function navigateToMe() {
+      navigate("/me");
+    };
+
+    function submitAndGo() {
+      handleSubmit();
+      navigateToMe();
+    };
+
+
   };
   const handleChange = (e) => {
     console.log("it worked too");
@@ -233,8 +245,9 @@ const ProfileCreator = () => {
               </div>
             )}
             <button
-              className="  font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600"
-              onClick={handleSubmit}
+              className="font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600"
+              type="submit"
+              onClick={submitAndGo}
             >
               Submit
             </button>
