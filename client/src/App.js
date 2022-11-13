@@ -62,9 +62,9 @@ function App() {
               <Route path="/ConnectWith" element={<ConnectWith />} />
 
             </Routes>
-          </div>
-          <Footer />
+          </div>   
         </div>
+        <Footer />
       </Router>
     </ApolloProvider>
   );

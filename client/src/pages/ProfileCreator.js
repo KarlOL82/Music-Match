@@ -1,7 +1,7 @@
 import { useMutation } from "@apollo/client";
 import React, { useState } from "react";
 import { UPDATE_PROFILE } from "../utils/mutations";
-import {Navigate} from "react-router-dom";
+import {Navigate, useNavigate} from "react-router-dom";
 import UploadWidget from "./uploadWidget";
 
 //******************* NOTES **********************/
@@ -52,6 +52,17 @@ const ProfileCreator = () => {
     }));
     console.log(userData);
   };
+
+  const navigate = useNavigate();
+
+  const navigateToMe = () => {
+    navigate("/me")
+  };
+
+  function submitAndGo() {
+    handleSubmit();
+    navigateToMe();
+  }
 
   return (
     <>
@@ -165,7 +176,11 @@ const ProfileCreator = () => {
             </div>
             )
             }
-            <button className="  font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600" onClick={handleSubmit}>Submit</button>
+            <button
+            linkTo="/me" 
+            className="font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600" 
+            onClick={submitAndGo}>Submit
+            </button>
           </section>
           <section>
             {/* This will be where cloudnairy button to upload photo will go  */}
