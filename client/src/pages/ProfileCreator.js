@@ -1,7 +1,7 @@
 import { useMutation } from "@apollo/client";
 import React, { useState } from "react";
 import { UPDATE_PROFILE } from "../utils/mutations";
-import {Navigate, useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import UploadWidget from "./uploadWidget";
 
 //******************* NOTES **********************/
@@ -23,17 +23,17 @@ const ProfileCreator = () => {
   });
 
   const handleSubmit = async (e) => {
-
+    e.preventDefault();
     console.log("it works");
     console.log(userData.url);
     userData.url= url;
-    e.preventDefault();
+    
     const res = await updateProfile({
 
       variables: {userData}
     });
     console.log(res);
-    return <Navigate to="/me" />;
+    
 
 
   };
@@ -54,7 +54,6 @@ const ProfileCreator = () => {
   };
 
   const navigate = useNavigate();
-
   const navigateToMe = () => {
     navigate("/me")
   };
@@ -67,9 +66,9 @@ const ProfileCreator = () => {
   return (
     <>
       <div className="flex justify-center pt-16 ">
-      <div class="bg"></div>
-      <div class="bg bg2"></div>
-      <div class="bg bg3"></div>
+      <div className="bg"></div>
+      <div className="bg bg2"></div>
+      <div className="bg bg3"></div>
         <form onSubmit={handleSubmit}>
 
           <section  className="bg-slate-300 p-3 text-gray-900 rounded-lg text-xl shadow-xl ">
@@ -172,14 +171,15 @@ const ProfileCreator = () => {
             ):(
             <div className="font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600">
 
-              <UploadWidget setUrl={setUrl} name= 'url'/>
+              <UploadWidget setUrl={setUrl} name= 'url' type='button'/>
             </div>
             )
             }
             <button
-            linkTo="/me" 
-            className="font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600" 
-            onClick={submitAndGo}>Submit
+             
+            className="font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600"
+            type="submit"
+            onClick={(e) => this.submitAndGo(e)}>Submit
             </button>
           </section>
           <section>
