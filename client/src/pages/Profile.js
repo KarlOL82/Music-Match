@@ -40,7 +40,7 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
-  <div className="flex justify-center py-48">
+  <div className="flex justify-center">
     <div class="bg"></div>
         <div class="bg bg2"></div>
         <div class="bg bg3"></div>
@@ -75,7 +75,7 @@ const Profile = () => {
                 </>
                 <div>
                   <figure>
-                    <figcaption>My Music</figcaption>
+                    <figcaption className="py-3">My Music</figcaption>
                     <audio controls src={user.url}>
                       <p>greatness</p>
                     </audio>
