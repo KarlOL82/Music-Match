@@ -38,14 +38,14 @@ const ConnectWith = () => {
       <div className="bg bg3"></div>
       {Auth.loggedIn() ? (
         <div className="my-3 ">
-          <div className="card-header bg-dark text-light p-2 m-0 ">
+          <div className="card-header bg-dark bg-opacity-20 text-light p-2 m-0 ">
           <div className="col-12 col-md-10 mb-5 ">
           {users
             ? users.map((user) => (
               
               <SwipeableCard className='swipe ' key={user.username} onSwipe={(dir) => swiped(dir, user.username)} preventSwipe={['up', 'down']} onCardLeftScreen={(dir) => outOfFrame(user.username, console.log('you swiped '+ dir + ' on ' + user.username))}>
                 <div key={user._id} className="text-center col-12 mb-3 pb-3 ">
-                  <div className="p-3 bg-dark text-light main-card ">
+                  <div className="p-3 bg-opacity-20 text-white main-card ">
                     <div className="header-div ">
                       <h1 className="py-6 card-header text-2xl">
                         {user.username}
