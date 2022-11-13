@@ -45,7 +45,7 @@ const ConnectWith = () => {
               <div className="flex justify-center">
               <SwipeableCard className='swipe ' key={user.username} onSwipe={(dir) => swiped(dir, user.username)} preventSwipe={['up', 'down']} onCardLeftScreen={(dir) => outOfFrame(user.username, console.log('you swiped '+ dir + ' on ' + user.username))}>
                 <div key={user._id} className="text-center col-12 mb-3 pb-3 ">
-                  <div className="p-3 bg-dark text-gray-900 main-card ">
+                  <div className="p-3 pb-6 bg-dark text-gray-900 main-card ">
                     <div className="header-div ">
                       <h1 className="py-6 card-header text-2xl">
                         {user.username}
@@ -79,9 +79,9 @@ const ConnectWith = () => {
           </div>
         </div>
         ) : (
-          <p>
+          <p className="text-center py-48 text-3xl text-white">
           You need to be logged in to share your thoughts. Please{" "}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          <Link to="/login"><span className="text-teal-400">login</span></Link> or <Link to="/signup"><span className="text-teal-400">signup.</span></Link>
         </p>
       )}
       </main>
