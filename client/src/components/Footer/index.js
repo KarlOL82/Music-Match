@@ -6,7 +6,8 @@ const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
   return (
-    <footer className="w-100 bg-gray-300 mt-auto bg-secondary fixed inset-x-0 bottom-0 p-4 ">
+
+    <footer className="w-100 bg-gray-300 mt-auto bg-secondary p-4">
       <div className="container text-center mb-5">
 
 

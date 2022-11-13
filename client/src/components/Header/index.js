@@ -10,7 +10,7 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-gray-300 text-center mt-auto ">
+    <header className="bg-gray-300 text-center mt-auto " >
       <div className="">
         <div>
           {Auth.loggedIn() ? (
