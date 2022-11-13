@@ -1,7 +1,7 @@
 import { useMutation } from "@apollo/client";
 import React, { useState } from "react";
 import { UPDATE_PROFILE } from "../utils/mutations";
-import {Navigate} from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import UploadWidget from "./uploadWidget";
 
 //******************* NOTES **********************/
@@ -12,30 +12,26 @@ import UploadWidget from "./uploadWidget";
 
 const ProfileCreator = () => {
   // const [formData, updateFormData] = React.useState(initialFormData);
-  const[url,setUrl] = useState("");
-  const [updateProfile] = useMutation(UPDATE_PROFILE)
+  const [url, setUrl] = useState("");
+  const [updateProfile] = useMutation(UPDATE_PROFILE);
   const [userData, setUserData] = useState({
     name: "",
     role: null,
-    
+
     url: "",
     about_me: "",
   });
 
   const handleSubmit = async (e) => {
-
     console.log("it works");
     console.log(userData.url);
-    userData.url= url;
+    userData.url = url;
     e.preventDefault();
     const res = await updateProfile({
-
-      variables: {userData}
+      variables: { userData },
     });
     console.log(res);
     return <Navigate to="/me" />;
-
-
   };
   const handleChange = (e) => {
     console.log("it worked too");
@@ -48,7 +44,7 @@ const ProfileCreator = () => {
     setUserData((prevState) => ({
       ...prevState,
       [name]: value,
-      url:url,
+      url: url,
     }));
     console.log(userData);
   };
@@ -56,13 +52,12 @@ const ProfileCreator = () => {
   return (
     <>
       <div className="flex justify-center pt-16 ">
-      <div class="bg"></div>
-      <div class="bg bg2"></div>
-      <div class="bg bg3"></div>
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
         <form onSubmit={handleSubmit}>
-
-          <section  className="bg-slate-300 p-3 text-gray-900 rounded-lg text-xl shadow-xl ">
-          <h1 className="flex justify-center font-bold">Edit Profile</h1>
+          <section className="bg-slate-300 p-3 text-gray-900 rounded-lg text-xl shadow-xl ">
+            <h1 className="flex justify-center font-bold">Edit Profile</h1>
 
             {/* This div is for Tailwind edits */}
             <div className="field col-12 col-md-10 mb-3 p-3">
@@ -118,51 +113,51 @@ const ProfileCreator = () => {
             {/* this will allow the user to select if they are a artist, musician, or producer */}
             <label>Roles</label>
             <div className="field col-12 col-md-10 mb-3 p-3">
-            <div className="role-container">
-              {/* This div is for Tailwind edits */}
-              <div className="">
-                <input
-                  id="artist_role"
-                  type="radio"
-                  name="role"
-                  required={true}
-                  value={"artist"}
-                  onChange={handleChange}
-                  // this will leave the box un-selected
-                  checked={userData.role === "artist"}
-                />
-                <label className="artist"> Artist </label>
+              <div className="role-container">
+                {/* This div is for Tailwind edits */}
+                <div className="">
+                  <input
+                    id="artist_role"
+                    type="radio"
+                    name="role"
+                    required={true}
+                    value={"artist"}
+                    onChange={handleChange}
+                    // this will leave the box un-selected
+                    checked={userData.role === "artist"}
+                  />
+                  <label className="artist"> Artist </label>
+                </div>
+                <div className="field">
+                  <input
+                    id="musician_role"
+                    type="radio"
+                    name="role"
+                    required={true}
+                    value={"musician"}
+                    onChange={handleChange}
+                    // this will leave the box un-selected
+                    checked={userData.role === "musician"}
+                  />
+                  <label className="musician"> Musician </label>
+                </div>
+                <div className="field ">
+                  <input
+                    id="producer_role"
+                    type="radio"
+                    name="role"
+                    required={true}
+                    value={"producer"}
+                    onChange={handleChange}
+                    // this will leave the box un-selected
+                    checked={userData.role === "producer"}
+                  />
+                  <label className="producer"> Producer </label>
+                </div>
               </div>
-              <div className="field">
-                <input
-                  id="musician_role"
-                  type="radio"
-                  name="role"
-                  required={true}
-                  value={"musician"}
-                  onChange={handleChange}
-                  // this will leave the box un-selected
-                  checked={userData.role === "musician"}
-                />
-                <label className="musician"> Musician </label>
-              </div>
-              <div className="field ">
-                <input
-                  id="producer_role"
-                  type="radio"
-                  name="role"
-                  required={true}
-                  value={"producer"}
-                  onChange={handleChange}
-                  // this will leave the box un-selected
-                  checked={userData.role === "producer"}
-                />
-                <label className="producer"> Producer </label>
-              </div>
-            </div>
-            {/* this is a checkbox to display role tag */}
+              {/* this is a checkbox to display role tag */}
 
-            {/* <div className="">
+              {/* <div className="">
               <label className="display-role col-12 col-md-10 mb-3 p-3 ">Display Role Tag</label>
 
               <input
@@ -179,7 +174,7 @@ const ProfileCreator = () => {
 
             {/* This will be for picking what intrest they have */}
             {/* <label>What Do You Want To See?</label> */}
-              <label className="about-me">About me </label>
+            <label className="about-me">About me </label>
             <div className="field col-12 col-md-10 mb-3 p-3">
               {/* <div className="role-interest-container">
                 <input
@@ -230,21 +225,24 @@ const ProfileCreator = () => {
                 onChange={handleChange}
               />
             </div>
-            {url ?(
+            {url ? (
               <p>Audio Uploaded</p>
-            ):(
-            <div className="font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600">
-
-              <UploadWidget setUrl={setUrl} name= 'url'/>
-            </div>
-            )
-            }
-            <button className="  font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600" onClick={handleSubmit}>Submit</button>
+            ) : (
+              <div className="font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600">
+                <UploadWidget setUrl={setUrl} name="url" />
+              </div>
+            )}
+            <button
+              className="  font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600"
+              onClick={handleSubmit}
+            >
+              Submit
+            </button>
           </section>
           <section>
             {/* This will be where cloudnairy button to upload photo will go  */}
-            
-              {/* <label className="uploadProfile">Upload photo</label>
+
+            {/* <label className="uploadProfile">Upload photo</label>
               <input
                 type="url"
                 name="url"
@@ -253,10 +251,7 @@ const ProfileCreator = () => {
                 // this way the user doesnt have to put a photo in
                 required={false}
               /> */}
-           
           </section>
-         
-
         </form>
       </div>
     </>
