@@ -32,16 +32,15 @@ const ProfileCreator = () => {
     });
     console.log(res);
     
-    const navigate = useNavigate;
+    const Navigate = useNavigate();
+  const navigateToMe = () => {
+    Navigate("/me")
+  };
 
-    function navigateToMe() {
-      navigate("/me");
-    };
-
-    function submitAndGo() {
-      handleSubmit();
-      navigateToMe();
-    };
+  function submitAndGo(event) {
+    handleSubmit(event);
+    navigateToMe();
+  }
 
 
   };
