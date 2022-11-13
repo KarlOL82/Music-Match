@@ -54,7 +54,7 @@ const ConnectWith = () => {
                         {user.role}
                       </h2>
                     </div>
-                    
+                      <h3 className="card-body">{user.about_me}</h3>
                     <div>
                       <figure className="justify-center ">
                         <figcaption>My Music</figcaption>
@@ -63,9 +63,6 @@ const ConnectWith = () => {
                           </audio>
                      </figure>
                     </div>
-
-                      <h3 className="card-body">{user.about_me}</h3>
-
                   </div>
                 </div>
                 </SwipeableCard> 
