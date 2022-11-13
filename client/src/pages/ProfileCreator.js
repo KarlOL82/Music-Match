@@ -32,15 +32,7 @@ const ProfileCreator = () => {
     });
     console.log(res);
     
-    const Navigate = useNavigate();
-  const navigateToMe = () => {
-    Navigate("/me")
-  };
-
-  function submitAndGo(event) {
-    handleSubmit(event);
-    navigateToMe();
-  }
+  
 
 
   };
@@ -59,6 +51,16 @@ const ProfileCreator = () => {
     }));
     console.log(userData);
   };
+
+  const Navigate = useNavigate();
+  const navigateToMe = () => {
+    Navigate("/me")
+  };
+
+  function submitAndGo(event) {
+    handleSubmit(event);
+    navigateToMe();
+  }
 
   return (
     <>
@@ -244,12 +246,11 @@ const ProfileCreator = () => {
               </div>
             )}
             <button
-              className="font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600"
-              type="submit"
-              onClick={submitAndGo}
-            >
-              Submit
-            </button>
+             
+             className="font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600"
+             type="submit"
+             onClick={submitAndGo}>Submit
+             </button>
           </section>
           <section>
             {/* This will be where cloudnairy button to upload photo will go  */}
