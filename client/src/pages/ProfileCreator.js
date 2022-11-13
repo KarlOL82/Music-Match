@@ -58,8 +58,8 @@ const ProfileCreator = () => {
     navigate("/me")
   };
 
-  function submitAndGo() {
-    handleSubmit();
+  function submitAndGo(event) {
+    handleSubmit(event);
     navigateToMe();
   }
 
@@ -179,7 +179,7 @@ const ProfileCreator = () => {
              
             className="font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600"
             type="submit"
-            onClick={(e) => this.submitAndGo(e)}>Submit
+            onClick={submitAndGo}>Submit
             </button>
           </section>
           <section>
