@@ -35,7 +35,7 @@ const Home = () => {
 
         <div className="p-6">
           <Link
-            className="btn  bg-slate-300  text-gray-900 rounded-lg  hover:bg-slate-600 font-bold btn-lg btn-light p-3 m-6"
+            className="btn text-xl bg-slate-300  text-gray-900 rounded-lg  hover:bg-slate-600 font-bold btn-lg btn-light p-3 m-6"
             to="/me"
           >
             {Profile}Go to Profile
@@ -44,7 +44,7 @@ const Home = () => {
 
         <div className="p-6">
           <Link
-            className="btn text-xl bg-slate-300 text-gray-900 rounded-lg  hover:bg-slate-600 font-bold btn-lg btn-light p-3 m-6"
+            className="btn  bg-slate-300 text-gray-900 rounded-lg  hover:bg-slate-600 font-bold btn-lg btn-light p-3 m-6"
             to="/ConnectWith"
           >
             {ConnectWith}Find Connections
