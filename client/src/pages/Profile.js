@@ -70,6 +70,9 @@ const Profile = () => {
 
                   <p className="py-6">{user.role}</p>
                 </h2>
+                <>
+                  <p className="card-body">{user.about_me}</p>
+                </>
                 <div>
                   <figure>
                     <figcaption>My Music</figcaption>
@@ -78,9 +81,6 @@ const Profile = () => {
                     </audio>
                   </figure>
                 </div>
-                <>
-                  <p className="card-body">{user.about_me}</p>
-                </>
               </div>
             </div>
             <>
