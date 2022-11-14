@@ -1,14 +1,39 @@
 import React, { useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
+import { REMOVE_PROFILE } from "../utils/mutations";
 // import UploadWidget from './uploadWidget';
 
 import Auth from "../utils/auth";
 
 const Profile = () => {
   const { username: userParam } = useParams();
+  const [removeProfile] = useMutation(REMOVE_PROFILE);
+
+  const [userData, setUserData] = useState({
+    name: "",
+    role: null,
+    url: "",
+    about_me: "",
+  });
+
+  const handleDelete = async (e) => {
+    try {
+      const { userData } = await removeProfile({});
+      removeProfile(userData);
+      setUserData((initialState) => ({
+        ...initialState,
+        name: "",
+        url: "",
+      }));
+      console.log(userData);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
@@ -17,21 +42,11 @@ const Profile = () => {
   const user = data?.me || data?.user || {};
   console.log(data);
 
-  const userData = useState({
-    _id: "",
-    name: "",
-    display_role: false,
-    role: [""],
-    role_interest: "",
-    url: "",
-    about_me: "",
-  });
-
   console.log(userData);
 
   if (Auth.loggedIn() && Auth.getProfile().data._id === userParam) {
     console.log("logged in");
-    return <Navigate to="/me" />;
+    
   }
 
   if (loading) {
@@ -41,9 +56,9 @@ const Profile = () => {
   if (!user?.username) {
     return (
       <div className="flex justify-center">
-        <div class="bg"></div>
-        <div class="bg bg2"></div>
-        <div class="bg bg3"></div>
+        <div className="bg"></div>
+        <div className="bg bg2"></div>
+        <div className="bg bg3"></div>
         <p className="text-center py-48 text-3xl text-white">
           You need to be logged in to access and create your profile. Please{" "}
           <Link to="/login">
@@ -98,6 +113,9 @@ const Profile = () => {
                   >
                     Update Profile
                   </Link>
+                  <button 
+                  className="btn text-xl bg-slate-300 rounded-lg text-gray-900 font-bold btn-lg btn-info m-2 hover:bg-slate-600" 
+                  onClick={handleDelete}>Remove Profile</button>
                 </div>
               )}
             </>{" "}
@@ -107,4 +125,5 @@ const Profile = () => {
     </div>
   );
 };
+
 export default Profile;

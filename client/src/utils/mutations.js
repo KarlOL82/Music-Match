@@ -38,4 +38,15 @@ export const UPDATE_PROFILE = gql`
   }
 `;
 
+export const REMOVE_PROFILE = gql`
+  mutation updateProfile($userData: ProfileData) {
+    updateProfile(userData: $userData) {
+      name
+      role
+      url
+      about_me
+    }
+  }
+`;
+
 

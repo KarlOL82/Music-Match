@@ -10,7 +10,6 @@ const ProfileCreator = () => {
   const [userData, setUserData] = useState({
     name: "",
     role: null,
-
     url: "",
     about_me: "",
   });
@@ -40,6 +39,8 @@ const ProfileCreator = () => {
     }));
     console.log(userData);
   };
+
+
 
   const Navigate = useNavigate();
   const navigateToMe = () => {
