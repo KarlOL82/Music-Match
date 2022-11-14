@@ -20,13 +20,24 @@ const ConnectWith = () => {
     return <div>Loading...</div>;
   }
 
+  const favorites = [];
+  const nopes = [];
+
   const swiped = (direction, nameToDelete) => {
     console.log("removing:" + nameToDelete);
     setLastDirection(direction);
   };
 
-  const outOfFrame = (name) => {
-    console.log(name + "left the screen!");
+  const outOfFrame = (name, direction) => {
+    console.log(name + " left the screen!");
+    if (direction === "right") {
+      favorites.push(name);
+      console.log(favorites);
+    } else {
+      nopes.push(name);
+      console.log(nopes);
+
+    }
   };
 
   return (
