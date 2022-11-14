@@ -63,6 +63,7 @@ const ConnectWith = () => {
                         onCardLeftScreen={(dir) =>
                           outOfFrame(
                             user.username,
+                            dir,
                             console.log(
                               "you swiped " + dir + " on " + user.username
                             )
