@@ -20,14 +20,26 @@ const ConnectWith = () => {
     return <div>Loading...</div>;
   }
 
-
   const swiped = (direction, nameToDelete) => {
       console.log('removing:' + nameToDelete)
       setLastDirection(direction)
   }
 
-  const outOfFrame = (name) => {
-      console.log(name + 'left the screen!')
+
+  const match = [];
+  const nope = [];
+
+  const outOfFrame = (name, direction) => {
+      // console.log(name + 'left the screen!')
+      console.log('you swiped ' + direction + ' on ' + name + '.')
+      if( direction === 'right' ) {
+        match.push(name);
+        console.log(match)
+      } else {
+        nope.push(name);
+        console.log(nope)
+      }
+      
   }
 
   return (
@@ -43,7 +55,7 @@ const ConnectWith = () => {
           {users
             ? users.map((user) => (
               <div className="flex justify-center">
-              <SwipeableCard className='swipe ' key={user.username} onSwipe={(dir) => swiped(dir, user.username)} preventSwipe={['up', 'down']} onCardLeftScreen={(dir) => outOfFrame(user.username, console.log('you swiped '+ dir + ' on ' + user.username))}>
+              <SwipeableCard className='swipe ' key={user.username} onSwipe={(dir) => swiped(dir, user.username)} preventSwipe={['up', 'down']} onCardLeftScreen={(dir) => outOfFrame(user.username, dir)}>
                 <div key={user._id} className="text-center col-12 mb-3 pb-3 ">
                   <div className="p-3 pb-6 bg-dark text-gray-900 main-card ">
                     <div className="header-div ">
