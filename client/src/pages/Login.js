@@ -1,18 +1,12 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
-// import Input from "../components/input";
-// import { loginFields } from "../constants/formFields";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
 
-import Auth from '../utils/auth';
-
-// const fields=loginFields;
-// let fieldsState = {};
-// fields.forEach(field=>fieldsState[field.id]='');
+import Auth from "../utils/auth";
 
 const Login = (props) => {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
@@ -41,8 +35,8 @@ const Login = (props) => {
 
     // clear form values
     setFormState({
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     });
   };
 
@@ -53,38 +47,40 @@ const Login = (props) => {
       <div class="bg bg3"></div>
       <div className="col-12 col-lg-10">
         <div className=" bg-slate-300 p-3 text-gray-900 rounded-lg">
-          <h4 className=" flex justify-center  font-bold bg-dark text-light p-2">Login</h4>
+          <h4 className=" flex justify-center  font-bold bg-dark text-light p-2">
+            Login
+          </h4>
           <div className="">
             {data ? (
               <p>
-                Success! You may now head{' '}
+                Success! You may now head{" "}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <div className="field col-12 col-md-10 mb-3 p-3">
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
+                  <input
+                    className="form-input"
+                    placeholder="Your email"
+                    name="email"
+                    type="email"
+                    value={formState.email}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className="field col-12 col-md-10 mb-3 p-3">
-                <input
-                  className="form-input "
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
+                  <input
+                    className="form-input "
+                    placeholder="******"
+                    name="password"
+                    type="password"
+                    value={formState.password}
+                    onChange={handleChange}
+                  />
                 </div>
                 <button
                   className="btn btn-block btn-primary  px-1 font-bold rounded-lg hover:bg-slate-600"
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                   type="submit"
                 >
                   Submit

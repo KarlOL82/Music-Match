@@ -57,34 +57,34 @@ const Signup = () => {
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <div className="field col-12 col-md-10 mb-3 p-3">
-                <input
-                  className="form-input"
-                  placeholder="Your username"
-                  name="username"
-                  type="text"
-                  value={formState.name}
-                  onChange={handleChange}
-                />
+                  <input
+                    className="form-input"
+                    placeholder="Your username"
+                    name="username"
+                    type="text"
+                    value={formState.name}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className="field col-12 col-md-10 mb-3 p-3">
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
+                  <input
+                    className="form-input"
+                    placeholder="Your email"
+                    name="email"
+                    type="email"
+                    value={formState.email}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className="field col-12 col-md-10 mb-3 p-3">
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
+                  <input
+                    className="form-input"
+                    placeholder="******"
+                    name="password"
+                    type="password"
+                    value={formState.password}
+                    onChange={handleChange}
+                  />
                 </div>
                 <button
                   className="btn btn-block btn-primary px-1 font-bold rounded-lg hover:bg-slate-600"

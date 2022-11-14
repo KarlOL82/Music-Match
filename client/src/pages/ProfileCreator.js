@@ -4,14 +4,7 @@ import { UPDATE_PROFILE } from "../utils/mutations";
 import { useNavigate } from "react-router-dom";
 import UploadWidget from "./uploadWidget";
 
-//******************* NOTES **********************/
-// Currently working on adding this info to local storage
-// Need to update models to have genres, aboutMe, Name, Birthday(if we want), and each role(Musician, Artist, Producer)
-// CSS still need to be done but it has a basic setup for now.
-// ************************************************/
-
 const ProfileCreator = () => {
-  // const [formData, updateFormData] = React.useState(initialFormData);
   const [url, setUrl] = useState("");
   const [updateProfile] = useMutation(UPDATE_PROFILE);
   const [userData, setUserData] = useState({
@@ -31,10 +24,6 @@ const ProfileCreator = () => {
       variables: { userData },
     });
     console.log(res);
-    
-  
-
-
   };
   const handleChange = (e) => {
     console.log("it worked too");
@@ -54,7 +43,7 @@ const ProfileCreator = () => {
 
   const Navigate = useNavigate();
   const navigateToMe = () => {
-    Navigate("/me")
+    Navigate("/me");
   };
 
   function submitAndGo(event) {
@@ -85,43 +74,6 @@ const ProfileCreator = () => {
                 onChange={handleChange}
               />
             </div>
-            {/* this container will collect all of the birthday digits */}
-            {/* <label>Birthday </label>
-            <div className="birthday-container">
-              <div className="field col-12 col-md-10 mb-3 p-3">
-                <input
-                  id="dob_day"
-                  type="number"
-                  name="dob_day"
-                  placeholder="DD"
-                  required={true}
-                  value={""}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="field col-12 col-md-10 mb-3 p-3">
-                <input
-                  id="dob_month"
-                  type="number"
-                  name="dob_month"
-                  placeholder="MM"
-                  required={true}
-                  value={""}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="field col-12 col-md-10 mb-3 p-3">
-                <input
-                  id="dob_year"
-                  type="number"
-                  name="dob_year"
-                  placeholder="YYYY"
-                  required={true}
-                  value={""}
-                  onChange={handleChange}
-                />
-              </div>
-            </div> */}
 
             {/* this will allow the user to select if they are a artist, musician, or producer */}
             <label>Roles</label>
@@ -168,64 +120,11 @@ const ProfileCreator = () => {
                   <label className="producer"> Producer </label>
                 </div>
               </div>
-              {/* this is a checkbox to display role tag */}
-
-              {/* <div className="">
-              <label className="display-role col-12 col-md-10 mb-3 p-3 ">Display Role Tag</label>
-
-              <input
-                id="display_role"
-                type="checkbox"
-                name="display_role"
-                onChange={handleChange}
-                // this will leave the box un-selected
-                checked={userData.display_role}
-              />
-
-            </div> */}
             </div>
 
-            {/* This will be for picking what intrest they have */}
             {/* <label>What Do You Want To See?</label> */}
             <label className="about-me">About me </label>
             <div className="field col-12 col-md-10 mb-3 p-3">
-              {/* <div className="role-interest-container">
-                <input
-                  id="artist_interest"
-                  type="radio"
-                  name="role_interest"
-                  required={true}
-                  value={"artist"}
-                  onChange={handleChange}
-                  // this will leave the box un-selected
-                  checked={userData.role_interest === "artist"}
-                />
-                <label className="artist"> Artist </label>
-                <input
-                  id="musician_interest"
-                  type="radio"
-                  name="role_interest"
-                  required={true}
-                  value={"musician"}
-                  onChange={handleChange}
-                  // this will leave the box un-selected
-                  checked={userData.role_interest === "musician"}
-                />
-                <label className="musician"> Musician </label>
-
-                <input
-                  id="producer_interest"
-                  type="radio"
-                  name="role_interest"
-                  required={true}
-                  value={"producer"}
-                  onChange={handleChange}
-                  // this will leave the box un-selected
-                  checked={userData.role_interest === "producer"}
-                />
-                <label className="producer"> Producer</label>
-              </div> */}
-
               {/* label for about me  */}
               <textarea
                 id="about"
@@ -246,11 +145,12 @@ const ProfileCreator = () => {
               </div>
             )}
             <button
-             
-             className="font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600"
-             type="submit"
-             onClick={submitAndGo}>Submit
-             </button>
+              className="font-bold bg-dark rounded-lg text-gray-900 hover:bg-slate-600"
+              type="submit"
+              onClick={submitAndGo}
+            >
+              Submit
+            </button>
           </section>
           <section>
             {/* This will be where cloudnairy button to upload photo will go  */}

@@ -19,11 +19,9 @@ export const QUERY_USERDATA = gql`
       role
       url
       about_me
-      
     }
   }
-
-`
+`;
 
 export const QUERY_USERS = gql`
   query User {
@@ -35,7 +33,6 @@ export const QUERY_USERS = gql`
       role
       url
       about_me
-      
     }
   }
 `;
@@ -50,7 +47,6 @@ export const QUERY_ME = gql`
       role
       url
       about_me
-      
     }
   }
 `;
