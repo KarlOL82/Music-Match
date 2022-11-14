@@ -40,6 +40,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     updateProfile(userData: ProfileData): User
+    removeProfile(userData: ProfileData): User
   }
 `;
 

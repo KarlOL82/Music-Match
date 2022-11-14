@@ -26,6 +26,7 @@ const ConnectWith = () => {
   const swiped = (direction, nameToDelete) => {
     console.log("removing:" + nameToDelete);
     setLastDirection(direction);
+    console.log(lastDirection);
   };
 
   const outOfFrame = (name, direction) => {
@@ -106,7 +107,7 @@ const ConnectWith = () => {
         </div>
       ) : (
         <p className="text-center py-48 text-3xl text-white">
-          You need to be logged in to share your thoughts. Please{" "}
+          You need to be logged in to view this section. Please{" "}
           <Link to="/login">
             <span className="text-teal-400">login</span>
           </Link>{" "}

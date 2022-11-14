@@ -54,6 +54,14 @@ const resolvers = {
         { new: true, runValidators: true }
       );
     },
+
+    removeProfile: async (parent, args, context) => {
+      return await User.findOneAndUpdate(
+        { _id: context.user._id },
+        { $pull: args.userData  },
+        { new: true, runValidators: true }
+      );
+    },
   },
 };
 
