@@ -45,7 +45,7 @@ const Profile = () => {
         <div class="bg bg2"></div>
         <div class="bg bg3"></div>
         <p className="text-center py-48 text-3xl text-white">
-          You need to be logged in to share your thoughts. Please{" "}
+          You need to be logged in to access and create your profile. Please{" "}
           <Link to="/login">
             <span className="text-teal-400">login</span>
           </Link>{" "}
