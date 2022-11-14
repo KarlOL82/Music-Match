@@ -10,7 +10,7 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-gray-300 text-center mt-auto " >
+    <header className="bg-gray-300 text-center mt-auto ">
       <div className="">
         <div>
           {Auth.loggedIn() ? (
@@ -58,7 +58,6 @@ const Header = () => {
           <Link className="text-gray-900 py-5 text-5xl font-bold hover:" to="/">
             <h1 className="m-0 py-10 ">Groove Connection</h1>
           </Link>
-          
         </div>
       </div>
     </header>

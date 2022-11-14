@@ -10,25 +10,19 @@ const typeDefs = gql`
     role: String
     url: String
     about_me: String
-    
-    
   }
 
   # type UserData {
   #   _id: ID!
-    
+
   # }
 
   input ProfileData {
-    
     name: String
     role: String
     url: String
     about_me: String
-    
-    
   }
-
 
   type Auth {
     token: ID!
@@ -46,7 +40,6 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     updateProfile(userData: ProfileData): User
-    
   }
 `;
 

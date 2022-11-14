@@ -50,11 +50,7 @@ const UploadWidget = ({ setUrl }) => {
       }
     );
   }, [setUrl]);
-  return (
-    <button onClick={() => widgetRef.current.open()}>
-      Upload Music
-    </button>
-  );
+  return <button onClick={() => widgetRef.current.open()}>Upload Music</button>;
 };
 
 export default UploadWidget;

@@ -40,15 +40,21 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
-  <div className="flex justify-center">
-    <div class="bg"></div>
+      <div className="flex justify-center">
+        <div class="bg"></div>
         <div class="bg bg2"></div>
         <div class="bg bg3"></div>
         <p className="text-center py-48 text-3xl text-white">
           You need to be logged in to share your thoughts. Please{" "}
-          <Link to="/login"><span className="text-teal-400">login</span></Link> or <Link to="/signup"><span className="text-teal-400">signup.</span></Link>
+          <Link to="/login">
+            <span className="text-teal-400">login</span>
+          </Link>{" "}
+          or{" "}
+          <Link to="/signup">
+            <span className="text-teal-400">signup.</span>
+          </Link>
         </p>
-    </div>
+      </div>
     );
   }
 
