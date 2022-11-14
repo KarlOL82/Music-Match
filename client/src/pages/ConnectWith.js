@@ -26,6 +26,7 @@ const ConnectWith = () => {
   const swiped = (direction, nameToDelete) => {
     console.log("removing:" + nameToDelete);
     setLastDirection(direction);
+    console.log(lastDirection);
   };
 
   const outOfFrame = (name, direction) => {
