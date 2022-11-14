@@ -38,21 +38,4 @@ export const UPDATE_PROFILE = gql`
   }
 `;
 
-// export const SAVE_BOOK = gql`
-//   mutation saveBook($bookToSave: bookParams!) {
-//     saveBook(bookData: $bookToSave) {
-//       _id
-//       username
-//       email
-//       bookCount
-//       savedBooks {
-//         authors
-//         description
-//         bookId
-//         image
-//         link
-//         title
-//       }
-//     }
-//   }
-// `;
+
