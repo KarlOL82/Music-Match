@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ConnectWith from "../../pages/ConnectWith";
-import Favorites from "../../pages/Favorites";
+// import Favorites from "../../pages/Favorites";
 
 import Auth from "../../utils/auth";
 
@@ -37,12 +37,12 @@ const Header = () => {
                 Logout
               </button>
 
-              <Link
+              {/* <Link
                 className="btn text-xl py-1 bg-amber-600 rounded-lg text-gray-900  float-right font-bold btn-lg btn-info m-2 hover:bg-slate-600 "
                 to="/favorites"
               >
                 {Favorites}Favorites
-              </Link> 
+              </Link>  */}
               
             </>
           ) : (
