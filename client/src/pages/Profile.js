@@ -108,14 +108,12 @@ const Profile = () => {
               {!userParam && (
                 <div className="">
                   <Link
-                    className="btn text-xl bg-slate-300 rounded-lg text-gray-900  font-bold btn-lg btn-info m-2 hover:bg-slate-600"
+                    className="btn text-xl  bg-slate-300 text-center rounded-lg text-gray-900 font-bold btn-lg btn-info m-2 hover:bg-slate-600"
                     to="/profileCreator"
                   >
                     Update Profile
                   </Link>
-                  <button 
-                  className="btn text-xl bg-slate-300 rounded-lg text-gray-900 font-bold btn-lg btn-info m-2 hover:bg-slate-600" 
-                  onClick={handleDelete}>Remove Profile</button>
+                  
                 </div>
               )}
             </>{" "}

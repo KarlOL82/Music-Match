@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { QUERY_USERS } from "../utils/queries";
-import SwipeableCard from "react-tinder-card";
+// import SwipeableCard from "react-tinder-card";
 
 import { useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
@@ -38,6 +38,10 @@ const Favorites = () => {
     //         let 
     //     }
     // }
+
+    if (loading) {
+      return <div>Loading...</div>;
+    }
 
   return (
     <main>
