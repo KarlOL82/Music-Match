@@ -44,6 +44,7 @@ const Home = () => {
               {ConnectWith}Find Connections
             </Link>
           </div>
+
         </section>
       </div>
     </main>

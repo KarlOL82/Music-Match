@@ -19,6 +19,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ConnectWith from "./pages/ConnectWith";
 import ProfileCreator from "./pages/ProfileCreator";
+import Favorites from "./pages/Favorites"
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -60,6 +61,7 @@ function App() {
               <Route path="/profiles/:username" element={<Profile />} />
               <Route path="/profileCreator" element={<ProfileCreator />} />
               <Route path="/ConnectWith" element={<ConnectWith />} />
+              <Route path="/favorites" element={<Favorites />} />
             </Routes>
           </div>
           <Footer />
