@@ -33,6 +33,7 @@ const ConnectWith = () => {
     if (direction === "right") {
       favorites.push(name);
       console.log(favorites);
+      localStorage.setItem('matches', JSON.stringify(favorites))
     } else {
       nopes.push(name);
       console.log(nopes);
