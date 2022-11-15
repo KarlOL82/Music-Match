@@ -18,6 +18,10 @@ const Favorites = () => {
 
   const showMatches = JSON.parse(localStorage.getItem('matches'))
 
+
+
+
+
     const handleDelete = (id) => {
         console.log(id)
         // showMatches.filter(matches => {
@@ -64,7 +68,6 @@ const Favorites = () => {
                           className="text-center col-12 mb-3 pb-3 "
                         >
                           <h3>{matches}</h3>
-                          <h5 onClick={() => handleDelete(matches._id)}>Remove</h5>
                         </div>
 
                     </div>
