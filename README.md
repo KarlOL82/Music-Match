@@ -81,7 +81,7 @@ This app allows musicians to connect with one another using a 'dating-app' like 
 
 ## Deployed Page
 
-https://jvanosdol.github.io/daily-planner/
+https://groove-connection.herokuapp.com/
 
 
 ## Github Repo
