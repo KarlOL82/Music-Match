@@ -58,7 +58,7 @@ git clone https://github.com/KarlOL82/music-match
 ## Screenshots
 
 
-- Planner Screenshot
+- App Screenshots
 
 
   ![screenshot](/assets/planner-screenshot.png)
