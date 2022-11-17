@@ -11,26 +11,26 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-gray-300 text-center mt-auto ">
+    <header className="flex justify-around text-lg bg-gray-300 text-center mt-auto">
       <div className="">
         <div>
           {Auth.loggedIn() ? (
             <>
               <Link
-                className="btn text-xl py-1 bg-amber-600 rounded-lg text-gray-900  float-right font-bold btn-lg btn-info m-2 hover:bg-slate-600 "
+                className="btn text-lg py-1 bg-amber-600 rounded-lg text-gray-900 font-bold btn-lg btn-info m-2 hover:bg-slate-600 "
                 to="/me"
               >
                 {Auth.getProfile().data.username}'s profile
               </Link>
 
               <Link
-                className="btn text-xl py-1 bg-amber-600 rounded-lg text-gray-900  float-right font-bold btn-lg btn-info m-2 hover:bg-slate-600 "
+                className="btn text-lg py-1 bg-amber-600 rounded-lg text-gray-900 font-bold btn-lg btn-info m-2 hover:bg-slate-600 "
                 to="/ConnectWith"
               >
                 {ConnectWith}Find Connections
               </Link>
               <button
-                className="btn text-xl py-1 bg-amber-600 rounded-lg text-gray-900  float-right font-bold btn-lg btn-info m-2 hover:bg-slate-600 "
+                className="btn text-lg py-1 bg-amber-600 rounded-lg text-gray-900 font-bold btn-lg btn-info m-2 hover:bg-slate-600 "
                 onClick={logout}
                 type="button"
               >
@@ -38,7 +38,7 @@ const Header = () => {
               </button>
 
               <Link
-                className="btn text-xl py-1 bg-amber-600 rounded-lg text-gray-900  float-right font-bold btn-lg btn-info m-2 hover:bg-slate-600 "
+                className="btn text-lg py-1 bg-amber-600 rounded-lg text-gray-900 font-bold btn-lg btn-info m-2 hover:bg-slate-600 "
                 to="/favorites"
               >
                 {Favorites}Favorites
