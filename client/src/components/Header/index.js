@@ -17,20 +17,20 @@ const Header = () => {
           {Auth.loggedIn() ? (
             <>
               <Link
-                className="btn text-lg py-1 bg-amber-600 rounded-lg text-gray-900 font-bold btn-lg btn-info m-2 hover:bg-slate-600 "
+                className="btn text-base py-1 bg-amber-600 rounded-lg text-gray-900 font-bold btn-lg btn-info m-2 hover:bg-slate-600 "
                 to="/me"
               >
                 {Auth.getProfile().data.username}'s profile
               </Link>
 
               <Link
-                className="btn text-lg py-1 bg-amber-600 rounded-lg text-gray-900 font-bold btn-lg btn-info m-2 hover:bg-slate-600 "
+                className="btn text-base py-1 bg-amber-600 rounded-lg text-gray-900 font-bold btn-lg btn-info m-2 hover:bg-slate-600 "
                 to="/ConnectWith"
               >
                 {ConnectWith}Find Connections
               </Link>
               <button
-                className="btn text-lg py-1 bg-amber-600 rounded-lg text-gray-900 font-bold btn-lg btn-info m-2 hover:bg-slate-600 "
+                className="btn text-base py-1 bg-amber-600 rounded-lg text-gray-900 font-bold btn-lg btn-info m-2 hover:bg-slate-600 "
                 onClick={logout}
                 type="button"
               >
@@ -38,7 +38,7 @@ const Header = () => {
               </button>
 
               <Link
-                className="btn text-lg py-1 bg-amber-600 rounded-lg text-gray-900 font-bold btn-lg btn-info m-2 hover:bg-slate-600 "
+                className="btn text-base py-1 bg-amber-600 rounded-lg text-gray-900 font-bold btn-lg btn-info m-2 hover:bg-slate-600 "
                 to="/favorites"
               >
                 {Favorites}Favorites
