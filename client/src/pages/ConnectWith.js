@@ -52,7 +52,7 @@ const ConnectWith = () => {
       <div className="bg bg3"></div>
       {Auth.loggedIn() ? (
         <div className="my-3 ">
-          <div className="card-header bg-dark bg-opacity-50 text-light p-2 m-0 ">
+          <div className="card-header bg-dark bg-opacity-50 text-light p-2 m-0">
             <div className="col-12 col-md-10 mb-5 ">
               {users
                 ? users.map((user) => (
@@ -74,7 +74,7 @@ const ConnectWith = () => {
                       >
                         <div
                           key={user._id}
-                          className="text-center col-12 mb-3 pb-3 "
+                          className="text-center max-h-72 col-12 mb-3 pb-3 "
                         >
                           <div className="p-3 pb-6 bg-dark text-gray-900 main-card ">
                             <div className="header-div ">
