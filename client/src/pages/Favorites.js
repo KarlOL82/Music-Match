@@ -12,12 +12,12 @@ const Favorites = () => {
   const { loading, data } = useQuery(QUERY_USERS);
 
   const users = data?.users || data?.users || {};
-
+  console.log(users);
   // const [lastDirection, setLastDirection] = useState();
 
   const showMatches = JSON.parse(localStorage.getItem("matches"));
   console.log(showMatches);
-
+  
   
 
   // const matches = [];
@@ -45,12 +45,15 @@ const Favorites = () => {
               {/* <h3 className="text-white">{showMatches}</h3> */}
               {showMatches
                 ? showMatches.map((matches) => (
+                  
                     <div className="flex justify-center content-center border-2 rounded w-32 bg-gray-300 border-black">
                       <div
                         key={matches._id}
+                        
                         className="text-center col-12 mb-3 pb-3 "
                       >
-                        <h3>{matches}</h3>
+                        <h3>{users.name}</h3>
+                        
                       </div>
                     </div>
                   ))
