@@ -48,11 +48,12 @@ const Favorites = () => {
                   
                     <div className="flex justify-center content-center border-2 rounded w-32 bg-gray-300 border-black">
                       <div
-                        key={matches._id}
+                        key={users._id}
                         
                         className="text-center col-12 mb-3 pb-3 "
                       >
                         <h3>{matches}</h3>
+                        <h3>{users.role}</h3>
                         
                       </div>
                     </div>
