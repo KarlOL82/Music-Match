@@ -54,6 +54,7 @@ const Favorites = () => {
                       >
                         <h3>{matches}</h3>
                         <h3>{users.role}</h3>
+                        <h3>{users.about_me}</h3>
                         
                       </div>
                     </div>
