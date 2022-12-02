@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { QUERY_USERS } from "../utils/queries";
+import { QUERY_USERS, QUERY_USER } from "../utils/queries";
 // import SwipeableCard from "react-tinder-card";
 
 import { useQuery } from "@apollo/client";
@@ -9,10 +9,13 @@ import { Link } from "react-router-dom";
 import "../app.css";
 
 const Favorites = () => {
-  const { loading, data } = useQuery(QUERY_USERS);
+  const { loading, data } = useQuery(QUERY_USERS, QUERY_USER);
 
   const users = data?.users || data?.users || {};
   console.log(users);
+
+  const user = data?.user || data?.user || {};
+  console.log(user);
   // const [lastDirection, setLastDirection] = useState();
 
   const showMatches = JSON.parse(localStorage.getItem("matches"));
@@ -53,8 +56,8 @@ const Favorites = () => {
                         className="text-center col-12 mb-3 pb-3 "
                       >
                         <h3>{matches}</h3>
-                        <h3>{users.role}</h3>
-                        <h3>{users.about_me}</h3>
+                        <h3>{matches.role}</h3>
+                        <h3>{matches.about_me}</h3>
                         
                       </div>
                     </div>
