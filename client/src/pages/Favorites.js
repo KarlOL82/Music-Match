@@ -56,7 +56,7 @@ const Favorites = () => {
                         className="text-center col-12 mb-3 pb-3 "
                       >
                         <h3>{matches}</h3>
-                        <h3>{matches.role}</h3>
+                        <h3>{users.role}</h3>
                         <h3>{matches.about_me}</h3>
                         
                       </div>
