@@ -22,6 +22,7 @@ const Favorites = () => {
   console.log(showMatches);
   
   
+  
 
   // const matches = [];
 
@@ -55,9 +56,9 @@ const Favorites = () => {
                         
                         className="text-center col-12 mb-3 pb-3 "
                       >
-                        <h3>{matches}</h3>
-                        <h3>{users.role}</h3>
-                        <h3>{matches.about_me}</h3>
+                        <h3>{matches.users.name}</h3>
+                          <h4>{users.role}</h4>
+                          <h4>{users.about_me}</h4>
                         
                       </div>
                     </div>

@@ -32,11 +32,11 @@ const ConnectWith = () => {
   const outOfFrame = (name, direction) => {
     console.log(name + " left the screen!");
     if (direction === "right") {
-      favorites.push(name);
+      favorites.push(data);
       console.log(favorites);
       localStorage.setItem('matches', JSON.stringify(favorites))
     } else {
-      nopes.push(name);
+      nopes.push(data);
       console.log(nopes);
 
     }
